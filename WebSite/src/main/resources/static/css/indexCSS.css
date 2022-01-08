@@ -1,0 +1,75 @@
+body {
+	background-color: #002134;
+}
+
+.topnav {
+	background-color: #002134;
+	overflow: hidden; 
+}
+
+.topnav a {
+	float: left;
+  	display: block;
+ 	color: #02908B;
+ 	background-color: trasparent;
+ 	font-family: "Century Gothic", sans-serif;
+  	text-align: center;
+  	font-weight: bold;
+	padding: 20px 40px;
+    font-size: 18px;
+}
+
+.topnav a:hover {
+	color: #B4FBF8;
+    border-color: #B4FBF8;
+  	border-bottom-style: solid;
+  	font-size: 20px;
+}
+
+.topnav input[type=text] {
+ 	float: right;
+    padding: 5px 5px;
+    margin: 15px;
+    color: #B4FBF8;
+    width: 300px;
+    height: 20px;
+    border: 2px solid #02908B;
+    background-color: #002134;
+    border-radius: 20px;
+    outline: none;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+input[type=text]:focus {
+	background-color: #002134;
+	border-color: #B4FBF8; 
+	color: #B4FBF8;
+}
+
+.loginButton {
+	font-family: "Century Gothic", sans-serif;
+  	display: inline-block;
+  	font-weight: bold;
+ 	border-radius: 50px;
+  	background-color: #02908B;
+  	border: none;
+ 	color: #002134;
+ 	text-align: center;
+  	font-size: 18px;
+  	padding: 10px;
+  	width: 100px;
+  	height: 50px;
+  	cursor: pointer;
+  	margin: 10px;
+}
+
+.loginButton:hover {
+  	background-color: #B4FBF8;
+  	font-size: 23px;
+}
+
+.containerButton {
+	float: right;
+	margin-right: 25px;
+}
