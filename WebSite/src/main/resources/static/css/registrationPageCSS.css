@@ -1,0 +1,55 @@
+.top {
+	width: 100%;
+	justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.formContainer {
+	width: 100%;
+	justify-content: center;
+	display: flex;
+	margin-bottom: 1%;
+}
+
+.infoContainer {
+	margin-top: 2%;
+	border: 1px solid #e4e4e4;
+	border-radius: 5px;
+	padding-top: 2%;
+	padding-left: 2%;
+	padding-right: 2%;
+	min-width: 25%;
+}
+
+input[type=text], select {
+	width: 100%;
+	height: 35px; padding : 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	padding: 12px 20px;
+}
+
+input[type=submit] {
+	width: 100%;
+	color: white;
+	margin: 8px 0;
+	border-radius: 4px;
+	cursor: pointer;
+	background-color: #dd9e1c;
+	color: black;
+	border-color: #816814;
+	text-align: center;
+	font-size: 100%;
+}
+
+input[type=submit]:hover {
+	background-color:  #79570f;
+}
+
+hr.solid {
+	border-top: 3px solid #bbbbbb;
+}
