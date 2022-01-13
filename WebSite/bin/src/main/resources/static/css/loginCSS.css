@@ -1,0 +1,39 @@
+body {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background: #002134;
+	background: linear-gradient(322deg, #002134 0%, #002134 1%, #02908B 98%); 
+}
+
+form {
+	position: fixed;
+  	top: 50%;
+  	left: 50%;
+ 	transform: translate(-50%, -50%);
+ 	background-color: #002134;
+ 	height: 1000px;
+ 	width: 800px;
+ 	border-radius: 20px;
+}
+
+.container {
+	margin-top: 50%;
+	padding-right: 50px;
+	padding-left: 50px;
+}
+
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin-top: 15px;
+	margin-bottom: 50px;
+}
+
+.buttonContainer {
+	margin-top: 100px;
+  	position: absolute;
+  	left: 50%;
+  	-ms-transform: translate(-50%, -50%);
+ 	transform: translate(-50%, -50%);
+}
+

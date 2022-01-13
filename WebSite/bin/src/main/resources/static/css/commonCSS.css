@@ -1,0 +1,33 @@
+*{
+	font-family: "Century Gothic", sans-serif;
+  	font-weight: bold;
+  	font-size: 26px;
+  	color: #02908B;
+}
+
+button {
+	padding: 0px 0px 0px 0px;
+ 	border: none;
+ 	height: 50px;
+ 	width: 150px;
+ 	background-color: #02908B;
+ 	color: #002134;
+ 	border-radius: 5px;
+}
+
+button:hover {
+  	background-color: #B4FBF8;
+}
+
+input[type=text], input[type=password] {
+  	background-color: #002134;
+	border: 2px solid #02908B;
+	border-radius: 5px;
+	outline: none;
+}
+
+input[type=text]:hover, input[type=password]:hover {
+  	color: #B4FBF8;	
+  	border-color: #B4FBF8;	 
+}
+
