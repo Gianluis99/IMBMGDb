@@ -1,0 +1,45 @@
+body {
+	margin-left: 0px;
+	margin-top: 5px;
+	background-color: #002134;
+}
+
+ul { display: inline; }
+
+li { display: inline; }
+
+nav {
+	margin-top: 5px; 
+  	overflow: hidden;
+	background-color: #002134;
+}
+
+nav a {
+	width: 100px;
+	padding: 24px 26px;
+  	float: left;
+	display: block;
+  	text-align: center;
+  	font-size: 26px;
+  	background-color: transparent;
+  	border-bottom: 3px solid transparent;
+}
+
+nav a:hover {
+  	color: #B4FBF8;
+  	border-bottom: 3px solid #B4FBF8;
+}
+
+nav .rightContainer {
+	float: right;
+	margin-right: 26px;
+	margin-top: 15px;
+}
+
+nav input[type=text] {
+	width: 400px;
+  	height: 38px;
+  	padding: 5px 10px;
+  	margin-right: 50px;
+  	margin-left: 10px;
+}
