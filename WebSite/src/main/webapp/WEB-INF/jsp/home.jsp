@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %> 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 
 	<head>
@@ -23,22 +23,28 @@
 				
 		<nav>
 			<ul>
+				<c:if test = "${username != null}">
+					<li><div class = "dropdown">${username}</div></li>
+				</c:if>
+				<c:if test = "${username == null}">
+					<li><a href = "loginPage">Login</a></li>
+				</c:if>
       			<li><a>Home</a></li>
       			<li><a>Movies</a></li>
+      			<li><a>Book</a></li>
      			<li><a>Music</a></li>
      			<li><a>Games</a></li>
-     			<li><a>Book</a></li>
     		</ul>
     		
     		<div class = "rightContainer">
-	    		<form>
-	    			<button type="submit" name = "searchButton"> Search </button>
-	      			<input type="text" placeholder="Type something.." name="searchField">
-	      			<button type="submit" name = "loginButton"> Login </button>
-	   			</form> 
+	    		<button type="submit" name = "searchButton"> Search </button>
+	      		<input type="text" placeholder="Type something.." name="searchField">
     		</div>
 		</nav>
 		
+		
+		
+		<!--
 		<section class = "swiperSection">
 			<h2 class="titleSection">Popular movies now</h2>
 			
@@ -46,7 +52,7 @@
 			  <div class="swiper-wrapper">
 			  
 			  	<div class="swiper-slide">
-			  		<a href = "login.html">
+			  		<a href = "registrationPage.html">
                     	<img class="imageSection"
                          src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
                         >
@@ -54,7 +60,7 @@
 			  	</div> 
 			  	
 			  	<div class="swiper-slide">
-			  		<a href = "login.html">
+			  		<a>
                     	<img class="imageSection"
                          src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
                         >
@@ -62,7 +68,7 @@
 			  	</div>
 			  	
 			  	<div class="swiper-slide">
-			  		<a href = "login.html">
+			  		<a>
                     	<img class="imageSection"
                          src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
                         >
@@ -84,7 +90,7 @@
 			  <div class="swiper-wrapper">
 			  
 			  	<div class="swiper-slide">
-			  		<a href = "login.html">
+			  		<a>
                     	<img class="imageSection"
                          src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
                         >
@@ -92,7 +98,7 @@
 			  	</div> 
 			  	
 			  	<div class="swiper-slide">
-			  		<a href = "login.html">
+			  		<a>
                     	<img class="imageSection"
                          src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
                         >
@@ -100,7 +106,7 @@
 			  	</div>
 			  	
 			  	<div class="swiper-slide">
-			  		<a href = "login.html">
+			  		<a>
                     	<img class="imageSection"
                          src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
                         >
@@ -122,7 +128,7 @@
 			  <div class="swiper-wrapper">
 			  
 			  	<div class="swiper-slide">
-			  		<a href = "login.html">
+			  		<a>
                     	<img class="imageSection"
                          src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
                         >
@@ -130,7 +136,7 @@
 			  	</div> 
 			  	
 			  	<div class="swiper-slide">
-			  		<a href = "login.html">
+			  		<a>
                     	<img class="imageSection"
                          src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
                         >
@@ -138,7 +144,7 @@
 			  	</div>
 			  	
 			  	<div class="swiper-slide">
-			  		<a href = "https://www.w3schools.com/Css/css_positioning.asp">
+			  		<a>
                     	<img class="imageSection"
                          src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
                         >
@@ -152,6 +158,8 @@
 			
 			</div>		
         </section>
+        
+        -->
         
 		<footer>
 		</footer>

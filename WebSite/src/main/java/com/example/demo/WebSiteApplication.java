@@ -8,7 +8,6 @@ public class WebSiteApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(WebSiteApplication.class, args);
-		//Questa non é una feature
 	}
 
 }
