@@ -7,6 +7,8 @@ import java.sql.Statement;
 
 public class IdBrokerContenuto {
 
+	
+	//RITORNA ID SOLO PER I CONTENUTI
 	public static Long getID( Connection con) throws SQLException {
 		String query="select nextval('contenuto_seq') as id";
 		

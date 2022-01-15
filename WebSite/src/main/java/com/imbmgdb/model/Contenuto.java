@@ -17,7 +17,7 @@ public class Contenuto{
 	private String sviluppatore;
 	
 	private ArrayList<Recensione> recensioni;
-	private ArrayList<Categoria> categoria;
+	private ArrayList<Categoria> categorie;
 	
 	
 	public Contenuto() {
@@ -125,13 +125,13 @@ public class Contenuto{
 		this.recensioni = recensioni;
 	}
 
-	public ArrayList<Categoria> getCategoria() {
-		return categoria;
+	public ArrayList<Categoria> getCategorie() {
+		return categorie;
 	}
 
 
-	public void setCategoria(ArrayList<Categoria> categoria) {
-		this.categoria = categoria;
+	public void setCategorie(ArrayList<Categoria> categoria) {
+		this.categorie = categoria;
 	}
 	
 

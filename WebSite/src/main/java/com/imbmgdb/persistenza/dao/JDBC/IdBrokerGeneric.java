@@ -7,6 +7,7 @@ import java.sql.Statement;
 
 public class IdBrokerGeneric {
 
+	//RITORNA ID PER TUTTI GLI ELEMENTi CHE NECESSITANO DI ID 
 	public static Long getID( Connection con) throws SQLException {
 		String query="select nextval('generic_seq') as id";
 		
