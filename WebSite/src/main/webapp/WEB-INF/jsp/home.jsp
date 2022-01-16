@@ -24,11 +24,20 @@
 		<nav>
 			<ul>
 				<c:if test = "${username != null}">
-					<li><div class = "dropdown">${username}</div></li>
+					<li>
+						<div class = "dropdown"> ${username} 
+							<div class = "dropdown-content">
+								<a class = "item left"> Poll </a>
+								<a class = "item center"> Lists </a>
+								<a class = "item right" href = "doLogout"> Logout </a>
+							</div>
+						</div>
+					</li>
 				</c:if>
 				<c:if test = "${username == null}">
 					<li><a href = "loginPage">Login</a></li>
 				</c:if>
+				
       			<li><a>Home</a></li>
       			<li><a>Movies</a></li>
       			<li><a>Book</a></li>

@@ -12,11 +12,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class LoginController {
+	
+	//Servlet per mostrare la pagina del login
 	@GetMapping("/loginPage")
 	public String loginPage() {
 		return "login";
 	}
 	
+	//Servlet per fare il login
 	@PostMapping("/doLogin")
 	public void doLogin(HttpServletRequest req, HttpServletResponse res, String username, String password) throws IOException {
 		HttpSession session = req.getSession(true);
