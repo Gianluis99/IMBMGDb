@@ -7,9 +7,14 @@ import com.imbmgdb.model.Lista;
 
 public interface ListaDao {
 
+	//trova tutte le liste di un utente
 	public List<Lista> findByUser(String username);
-	public boolean insert(Lista l);
-	public boolean update(Lista l);
+	
+	//inserisce una lista di un utente
+	public boolean insertNewLista(Lista l);
+	
+	//aggiorna la lista
+	public boolean updateLista(Lista l);
 
 	public void delete(Lista l);
 }

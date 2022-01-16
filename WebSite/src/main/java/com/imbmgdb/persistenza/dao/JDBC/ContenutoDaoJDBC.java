@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import com.imbmgdb.model.Categoria;
 import com.imbmgdb.model.Contenuto;
@@ -23,7 +22,7 @@ public class ContenutoDaoJDBC implements ContenutoDao {
 	public boolean insertContenuto(Contenuto c) {
 		String query = "insert into contenuto values (?,?,?,?,?,?,?,?,?)";
 		try {
-			c.setId(IdBrokerContenuto.getID(con));
+			c.setId(IdBrokerContenuto.getID(con)); //prendo l'id dalla sequences di dbeaver
 			PreparedStatement st = con.prepareStatement(query);
 			st.setLong(1, c.getId());
 			st.setString(2, c.getTitolo());
@@ -38,7 +37,7 @@ public class ContenutoDaoJDBC implements ContenutoDao {
 			int res = 0;
 			res = st.executeUpdate();
 			
-			return res == 1;
+			return res > 0; //se il contenuto è stato inserito ritorna true
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -46,7 +45,7 @@ public class ContenutoDaoJDBC implements ContenutoDao {
 		}
 	}
 
-//TODO PROXY RECENSIONI
+//TODO PROXY RECENSIONI e CATEGORIE
 	@Override
 	public Contenuto findByPrimaryKey(Long id) {
 		Contenuto contenuto = null;
@@ -77,7 +76,7 @@ public class ContenutoDaoJDBC implements ContenutoDao {
 		return contenuto;
 	}
 
-	// TODO PROXY RECENSIONI
+	//TODO PROXY RECENSIONI e CATEGORIE
 	@Override
 	public Contenuto findByName(String name) {
 		Contenuto contenuto = null;
@@ -113,16 +112,14 @@ public class ContenutoDaoJDBC implements ContenutoDao {
 
 	}
 
+	//dato la categoria e il tipo contenuto restituisce tutti i contenuti
 	@Override
 	public ArrayList<Contenuto> findAllContenutiByCategoria(Categoria c, int tipoContenuto) {
 
 		return null;
 	}
 
-	@Override
-	public List<Contenuto> findAllByType(int tipoContenuto) {
-		return null;
-	}
+	
 
 	@Override
 	public ArrayList<Contenuto> findAllBySearch(String value) {

@@ -16,17 +16,18 @@ public class CategoriaDaoJDBC implements CategoriaDao {
 	}
 
 	@Override
-	public boolean save(Categoria c) {
+	public boolean insertNewCategoria(Categoria c) {
+
 		String query = "insert into categoria values (?)";
 		PreparedStatement st;
 		try {
 			st = conn.prepareStatement(query);
 			st.setString(1, c.getNome());
-			int result=0;
-			result=st.executeUpdate();
+			int result = 0;
+			result = st.executeUpdate();
 			st.close();
-			
-			return result==1;
+
+			return result > 0; 
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -34,7 +35,6 @@ public class CategoriaDaoJDBC implements CategoriaDao {
 		}
 	}
 
-	
 	@Override
 	public boolean delete(Categoria c) {
 		return false;

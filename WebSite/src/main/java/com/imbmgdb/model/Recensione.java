@@ -1,4 +1,4 @@
-	package com.imbmgdb.model;
+package com.imbmgdb.model;
 
 import java.util.List;
 import java.util.Objects;
@@ -12,7 +12,7 @@ public class Recensione {
 	private int voto;
 	private List<Utente> like;
 	private List <Utente> dislike;
-	
+	private Long idContenuto;
 	private String nomeUtente;
 
 	
@@ -68,11 +68,11 @@ public class Recensione {
 		this.dislike = dislike;
 	}
 
-	public String getUtente() {
+	public String getNomeUtente() {
 		return nomeUtente;
 	}
 
-	public void setUtente(String utente) {
+	public void setNomeUtente(String utente) {
 		this.nomeUtente = utente;
 	}
 
@@ -83,6 +83,15 @@ public class Recensione {
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;
 	}
+	
+	public Long getIdContenuto() {
+		return idContenuto;
+	}
+
+	public void setIdContenuto(Long idRecensione) {
+		this.idContenuto = idRecensione;
+	}
+	
 	
 	
 	@Override
@@ -101,6 +110,7 @@ public class Recensione {
 		Recensione other = (Recensione) obj;
 		return Objects.equals(id, other.id);
 	}
+
 	
 	
 

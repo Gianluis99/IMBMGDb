@@ -18,8 +18,8 @@ public class RecensioneDaoJDBC implements RecensioneDao {
 
 
 	@Override
-	public boolean saveOrUpdate(Recensione recensione, String nomeUtente, Long idContenuto) {
-		if (recensione.getId() == 0) {
+	public boolean saveOrUpdate(Recensione recensione) {
+		if (recensione.getId() == 0) {//se la recensione non esiste  viene fatto l'insert
 			// INSERT
 			try {
 				recensione.setId(IdBrokerGeneric.getID(conn));
@@ -30,8 +30,8 @@ public class RecensioneDaoJDBC implements RecensioneDao {
 				st.setString(2, recensione.getTitolo());
 				st.setString(3, recensione.getTesto());
 				st.setInt(4, recensione.getVoto());
-				st.setString(5, nomeUtente);
-				st.setLong(6, idContenuto);
+				st.setString(5, recensione.getNomeUtente());
+				st.setLong(6, recensione.getIdContenuto());
 
 				int res = 0;
 				res = st.executeUpdate();
@@ -41,7 +41,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
 				return false;
 			}
 		} else {
-			// UPDATE
+			// UPDATE se recensione esiste 
 			try {
 				String query = "update recensione " 
 						+ "set titolo = ?, testo = ?, voto = ? " + "where id = ?";

@@ -31,7 +31,7 @@ public class ListaDaoJDBC implements ListaDao {
 
 
 	@Override
-	public boolean insert(Lista lista) {
+	public boolean insertNewLista(Lista lista) {
 		String query = "insert into lista values (?,?,?)";
 		try {
 			PreparedStatement st = conn.prepareStatement(query);
@@ -43,7 +43,7 @@ public class ListaDaoJDBC implements ListaDao {
 			
 			int res=0;
 			res=st.executeUpdate();
-			return res==1;
+			return res > 0; //se l'elemento è stato inserito ritorna true
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -52,7 +52,7 @@ public class ListaDaoJDBC implements ListaDao {
 
 
 	@Override
-	public boolean update(Lista c) {
+	public boolean updateLista(Lista c) {
 		return false;
 	}
 
