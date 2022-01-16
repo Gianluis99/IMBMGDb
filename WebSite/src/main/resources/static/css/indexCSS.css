@@ -17,12 +17,33 @@ nav {
 nav a {
 	width: 100px;
 	padding: 24px 26px;
-  	float: left;
+	float: left;
 	display: block;
   	text-align: center;
   	font-size: 26px;
   	background-color: transparent;
   	border-bottom: 3px solid transparent;
+  	text-decoration: none;
+}
+
+.dropdown {
+	width: 100px;
+	padding: 24px 26px;
+	float: left;
+	display: block;
+  	text-align: center;
+  	font-size: 26px;
+  	background-color: #02908B;
+  	border-bottom: 3px solid transparent;
+  	text-decoration: none;
+  	color: #002134;	
+  	margin-left: 26px;
+  	border-radius: 10px 10px 10px 10px;
+}
+
+.dropdown:hover {
+	color: #B4FBF8;
+	border-radius: 10px 10px 0px 0px;
 }
 
 nav a:hover {
@@ -37,10 +58,10 @@ nav .rightContainer {
 }
 
 nav input[type=text] {
-	width: 400px;
-  	height: 38px;
+	width: 500px;
+  	height: 50px;
   	padding: 5px 10px;
-  	margin-right: 50px;
+  	margin-right: 0px;
   	margin-left: 10px;
 }
 
@@ -92,3 +113,43 @@ nav input[type=text] {
     font-weight: bold;
     transition: transform 0.1s ease-out;
 }
+
+/***********/
+
+.dropdown-content {
+	 position: absolute;
+	 display: none;
+	 background-color: #02908B;
+	 min-width: 160px;
+	 font-size: 26px;
+	 margin-top: 26px;
+	 margin-left: -26px;
+	 text-align: center;
+	 color: #002134;
+	 border-radius: 0px 10px 10px 10px;
+}
+
+.item {
+	 padding: 24px, 26px;
+	 text-decoration: none;
+	 display: block;
+	 color: #002134;
+	 text-align: center;
+}
+
+.center:hover { color: #002134; background-color: #B4FBF8;  }
+
+.left:hover {
+	 border-radius: 0px 0px 0px 10px;
+	 color: #002134; background-color: #B4FBF8;
+}
+
+.right:hover {
+	 border-radius: 0px 10px 10px 0px;
+	 color: #002134; background-color: #B4FBF8;
+}
+
+.dropdown:hover .dropdown-content { display: block; }
+
+
+
