@@ -22,7 +22,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
 		if (recensione.getId() == 0) {//se la recensione non esiste  viene fatto l'insert
 			// INSERT
 			try {
-				recensione.setId(IdBrokerGeneric.getID(conn));
+				recensione.setId(IdBrokerGeneric.getID(conn));//prendo id generico da sequences di dbeaver
 				String query = "insert into recensione " 
 				+ "values (?, ?, ?, ?, ?, ?)";
 				PreparedStatement st = conn.prepareStatement(query);

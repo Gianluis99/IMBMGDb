@@ -6,6 +6,7 @@
 	</head>
 
 	<body>
+	<div class="formContainer">
 		<form method = "post" action = "doLogin">
 			<div class="container">
 		   		<label for="username">Username</label>
@@ -18,9 +19,15 @@
 	  		<div class = "buttonContainer">
 	  			<button type="submit">Login</button>
 	 		</div>
+	 		
+	 			 <a href="registration">create your account</a>
+	 		
 		</form>	
 		
+		</div>
+		
 		<h1>REGISTER</h1>
+		
 	</body>
 
 </html>

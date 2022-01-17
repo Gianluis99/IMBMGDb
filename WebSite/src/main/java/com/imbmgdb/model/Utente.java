@@ -1,5 +1,6 @@
 package com.imbmgdb.model;
 
+import java.sql.Date;
 import java.util.Objects;
 
 public class Utente {
@@ -9,7 +10,7 @@ public class Utente {
 	private String password;
 	private int tipo;
 	private String email;
-	private String dataDiNascita;
+	private Date dataDiNascita;
 	private boolean abilitato;
 	
 	
@@ -58,11 +59,11 @@ public class Utente {
 		this.email = email;
 	}
 
-	public String getDataDiNascita() {
+	public Date getDataDiNascita() {
 		return dataDiNascita;
 	}
 
-	public void setDataDiNascita(String dataDiNascita) {
+	public void setDataDiNascita(Date dataDiNascita) {
 		this.dataDiNascita = dataDiNascita;
 	}
 

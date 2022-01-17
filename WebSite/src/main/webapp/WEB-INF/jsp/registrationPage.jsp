@@ -1,3 +1,9 @@
+
+<!-- includiamo JSTL -->
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 <html>
 <head>
 <meta charset="utf-8" />
@@ -34,30 +40,41 @@
 
 		<div class="infoContainer">
 			<h3>Create account</h3><br>
-
-			<form>
- 				<label for="usename">Your username:</label><br>
-  				<input type="text" id="name" name="name"  placeholder="enter username" ><br>
+			
+			<c:if test="${error!=null}">
+					<div class="alert alert-danger" role="alert">
+		 				${error}
+					</div>
+			</c:if>
+			
+			
+			<form  method="post" action="registrationService">
+ 				<label for="username">Your username:</label><br>
+ 				
+  				<input type="text" id="username" name="username" value="${username}" placeholder="enter username" required><br>
   				<label for="email">Email:</label><br>
- 			    <input type="text" id="email" name="email" placeholder="enter email" >
+  				
+ 			    <input type="email" id="email" name="email" value="${email}" placeholder="enter email" required>
  			    <label for="Password">Password:</label><br>
- 			    <input type="password" id="password" name="password" placeholder="at least 8 characters"><br>
+ 			    
+ 			    <input type="password" id="password" name="password" value="${password}"  placeholder="at least 6 characters" required><br>
  			    <label for="Password">Re-enter password:</label><br>
- 			    <input type="password" id="rePassword" name="rePassword" ><br><br>
+ 			    
+ 			    <input type="password" id="rePassword" name="rePassword" value="${rePassword}"required><br><br>
  			    
  			     <input type="submit" value="Create your IMBMGDb account">
  			    
  			    
 			</form>
 			<hr class="solid">
-			<p>Already have an account? <a href="">Sign-In</a></p>
+			<p>Already have an account? <a href="loginPage">Sign-In</a></p>
 		</div>
 	</div>
 
 
 
 
-
+	
 	<footer> </footer>
 </body>
 

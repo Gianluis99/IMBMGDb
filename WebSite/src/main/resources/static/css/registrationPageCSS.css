@@ -11,6 +11,10 @@ html body {
 	background: linear-gradient(322deg, #002134 0%, #002134 1%, #02908B 98%);
 }
 
+.alert{
+	font-size: 10px;
+}
+
 .top {
 	width: 100%;
 	justify-content: center;
@@ -26,6 +30,8 @@ html body {
 }
 
 .infoContainer {
+	max-width: 30%;
+	height: 50%;
 	margin-top: 2%;
 	box-shadow: 3px 3px 3px 3px #001624;
 	border-radius: 5px;
@@ -36,7 +42,7 @@ html body {
 	background-color: #002134;
 }
 
-input[type=text], input[type=password], select {
+input[type=text], input[type=password],input[type=email], select {
 	width: 100%;
 	height: 35px;
 	padding: 12px 20px;
