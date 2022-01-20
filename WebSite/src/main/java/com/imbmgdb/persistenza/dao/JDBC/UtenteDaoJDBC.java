@@ -76,4 +76,26 @@ public class UtenteDaoJDBC implements UtenteDao {
 		return false;
 	}
 
+	@Override
+	public String checkUser(Utente user) {
+		String query = "select * from utente where nome_utente = ?";
+		try {
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, user.getUserName());
+			ResultSet rs = st.executeQuery();
+			Boolean result = false;
+			if(rs.next()) {
+				String password = rs.getString("password");
+				result = BCrypt.checkpw(user.getPassword(), password);
+			}
+			st.close();
+			
+			if(result) { return Messages.SUCCESS; }
+			else { return Messages.LOGIN_GENERIC_ERROR; }
+			
+		} catch (SQLException e) { e.printStackTrace(); }
+	
+		return Messages.ERROR;
+	}
+
 }

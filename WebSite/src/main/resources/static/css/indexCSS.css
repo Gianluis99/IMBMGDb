@@ -32,7 +32,7 @@ nav a {
 	float: left;
 	display: block;
   	text-align: center;
-  	font-size: 26px;
+  	font-size: 20px;
   	background-color: #02908B;
   	border-bottom: 3px solid transparent;
   	text-decoration: none;
@@ -67,10 +67,11 @@ nav input[type=text] {
 
 .swiperSection {
     margin-top: 40px;
+    height: 310px;
 }
 
 .titleSection {
-    margin: 0 4% 12px;
+    margin: 0 4% 10px;
 }
 
 .tilesSection.swiper {

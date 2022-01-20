@@ -20,14 +20,11 @@
 	  			<button type="submit">Login</button>
 	 		</div>
 	 		
-	 			 <a href="registration">create your account</a>
-	 		
+	 		<a href="registration" class = "registration">create your account</a>
 		</form>	
-		
-		</div>
-		
-		<h1>REGISTER</h1>
-		
+			
+	</div>
+				
 	</body>
 
 </html>

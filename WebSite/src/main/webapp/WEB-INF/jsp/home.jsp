@@ -20,7 +20,8 @@
 	
 		<header>
 		</header>
-				
+		
+		<!-- Nella nav vengono interrogati gli attributi degli scoped obj (tipo le req). jstl cerca un attributo che si chiama username. -->
 		<nav>
 			<ul>
 				<c:if test = "${username != null}">
@@ -50,125 +51,64 @@
 	      		<input type="text" placeholder="Type something.." name="searchField">
     		</div>
 		</nav>
-		
-		
-		
-		<!--
+			
+		<!--  
 		<section class = "swiperSection">
 			<h2 class="titleSection">Popular movies now</h2>
-			
 			<div class="tilesSection swiper">
 			  <div class="swiper-wrapper">
-			  
-			  	<div class="swiper-slide">
-			  		<a href = "registrationPage.html">
-                    	<img class="imageSection"
-                         src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
-                        >
-                    </a>
-			  	</div> 
-			  	
-			  	<div class="swiper-slide">
-			  		<a>
-                    	<img class="imageSection"
-                         src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
-                        >
-                    </a>
-			  	</div>
-			  	
-			  	<div class="swiper-slide">
-			  		<a>
-                    	<img class="imageSection"
-                         src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
-                        >
-                    </a>
-			  	</div>    
-			  	    
+			    <c:forEach items = "${mostPopularContents}" var = "content">
+				  	<div class="swiper-slide">
+				  		<a href = "registrationPage.html">
+	                    	<img class="imageSection"
+	                         src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
+	                        >
+	                    </a>
+				  	</div> 
+			  	</c:forEach>
 			  </div>
-			  
 			  <div class="swiper-button-prev"></div>
 			  <div class="swiper-button-next"></div>
-			
 			</div>		
         </section>
         
         <section class = "swiperSection">
-			<h2 class="titleSection">New movies</h2>
-			
+			<h2 class="titleSection">News</h2>
 			<div class="tilesSection swiper">
 			  <div class="swiper-wrapper">
-			  
-			  	<div class="swiper-slide">
-			  		<a>
-                    	<img class="imageSection"
-                         src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
-                        >
-                    </a>
-			  	</div> 
-			  	
-			  	<div class="swiper-slide">
-			  		<a>
-                    	<img class="imageSection"
-                         src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
-                        >
-                    </a>
-			  	</div>
-			  	
-			  	<div class="swiper-slide">
-			  		<a>
-                    	<img class="imageSection"
-                         src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
-                        >
-                    </a>
-			  	</div>    
-			  	    
+			    <c:forEach items = "${newContents}" var = "content">
+				  	<div class="swiper-slide">
+				  		<a href = "registrationPage.html">
+	                    	<img class="imageSection"
+	                         src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUjsKDiaKwLmrV662pwmVKEtRmbJI-s8M9ojCqr2QEdnPUJPX86RP-n9IGXxGcaHWkTf-cwz5e4kBLN3jYLM7HuBfYA.webp?r=01d"
+	                        >
+	                    </a>
+				  	</div> 
+			  	</c:forEach>
 			  </div>
-			  
 			  <div class="swiper-button-prev"></div>
 			  <div class="swiper-button-next"></div>
-			
 			</div>		
         </section>
         
         <section class = "swiperSection">
-			<h2 class="titleSection">Coming soon movies</h2>
-			
+			<h2 class="titleSection">Coming soon</h2>
 			<div class="tilesSection swiper">
 			  <div class="swiper-wrapper">
-			  
-			  	<div class="swiper-slide">
-			  		<a>
-                    	<img class="imageSection"
-                         src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
-                        >
-                    </a>
-			  	</div> 
-			  	
-			  	<div class="swiper-slide">
-			  		<a>
-                    	<img class="imageSection"
-                         src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
-                        >
-                    </a>
-			  	</div>
-			  	
-			  	<div class="swiper-slide">
-			  		<a>
-                    	<img class="imageSection"
-                         src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
-                        >
-                    </a>
-			  	</div>    
-			  	    
+			    <c:forEach items = "${comingSoonContents}" var = "content">
+				  	<div class="swiper-slide">
+				  		<a href = "registrationPage.html">
+	                    	<img class="imageSection"
+	                         src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
+	                        >
+	                    </a>
+				  	</div> 
+			  	</c:forEach>
 			  </div>
-			  
 			  <div class="swiper-button-prev"></div>
 			  <div class="swiper-button-next"></div>
-			
 			</div>		
         </section>
-        
-        -->
         
 		<footer>
 		</footer>
@@ -189,7 +129,7 @@
 				},
 				breakpoints: {
 				// when window width is >= 640px
-					40: {
+					640: {
 					slidesPerView: 5,
 					slidesPerGroup: 5,
 					freeMode: false
@@ -197,6 +137,7 @@
 				}
 			})
     	</script>
+    	-->
 	   
 	</body>
 
