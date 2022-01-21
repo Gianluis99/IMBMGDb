@@ -55,7 +55,7 @@ public class RegistrationController {
 		}
 			
 		Utente utente=new Utente();
-		utente.setUserName(username);
+		utente.setUsername(username);
 		utente.setEmail(email);
 		utente.setPassword(password);
 		String res=Database.getInstance().getUtenteDao().insertNewUtente(utente);

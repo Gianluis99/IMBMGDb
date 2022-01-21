@@ -27,7 +27,7 @@ public class UtenteDaoJDBC implements UtenteDao {
 
 		try {
 			PreparedStatement st = conn.prepareStatement(query);
-			st.setString(1, utente.getUserName());
+			st.setString(1, utente.getUsername());
 
 			ResultSet res = st.executeQuery(); // controlliamo prima se c'è un utente che ha associato l'username
 												// inserito
@@ -46,7 +46,7 @@ public class UtenteDaoJDBC implements UtenteDao {
 			query = "insert into utente values (?,?,?,?,?,?)";
 
 			st = conn.prepareStatement(query);
-			st.setString(1, utente.getUserName());
+			st.setString(1, utente.getUsername());
 
 			// password criptata con il sale per sicurezza
 			st.setString(2, BCrypt.hashpw(utente.getPassword(), BCrypt.gensalt(13)));
@@ -99,9 +99,9 @@ public class UtenteDaoJDBC implements UtenteDao {
 	@Override
 	public String assignRoleToUser(String username, int tipo) {
 
-		if(!searchByUsername(username))
+		if (!searchByUsername(username))
 			return Messages.ERROR_USER_NOT_EXISTS;
-		
+
 		String query = "select tipologia_utente  from utente where nome_utente = ?";
 
 		try {
@@ -120,12 +120,12 @@ public class UtenteDaoJDBC implements UtenteDao {
 			st = conn.prepareStatement(query);
 			st.setInt(1, tipo);
 			st.setString(2, username);
-			int result=0;
+			int result = 0;
 			result = st.executeUpdate();
 
-			if(result > 0)
+			if (result > 0)
 				return Messages.SUCCESS;
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 
@@ -140,14 +140,11 @@ public class UtenteDaoJDBC implements UtenteDao {
 
 		try {
 			PreparedStatement st = conn.prepareStatement(query);
-			st.setString(1,username);
+			st.setString(1, username);
 
-			ResultSet res = st.executeQuery(); // controlliamo prima se c'è un utente che ha associato l'username
-												// inserito
+			ResultSet res = st.executeQuery(); 
 			if (res.next())
 				return true;
-
-		
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -155,6 +152,79 @@ public class UtenteDaoJDBC implements UtenteDao {
 		}
 		return false;
 
+	}
+
+	@Override
+	public ArrayList<Utente> getAllUsers() {
+		ArrayList<Utente> users = new ArrayList<Utente>();
+		String query = "SELECT * FROM utente";
+
+		try {
+			PreparedStatement st = conn.prepareStatement(query);
+			st.executeQuery();
+			ResultSet res = st.executeQuery();
+			while (res.next()) {
+				Utente utente = new Utente();
+				utente.setUsername(res.getString("nome_utente"));
+				utente.setEmail(res.getString("email"));
+				utente.setTipo(res.getInt("tipologia_utente"));
+				utente.setAbilitato(res.getBoolean("abilitato"));
+				users.add(utente);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		}
+		return users;
+	}
+
+	@Override
+	public ArrayList<Utente> getAllUsersBanned() {
+		ArrayList<Utente> users = new ArrayList<Utente>();
+		String query = "SELECT * FROM utente where abilitato = '0'";
+
+		try {
+			PreparedStatement st = conn.prepareStatement(query);
+			st.executeQuery();
+			ResultSet res = st.executeQuery();
+			while (res.next()) {
+				Utente utente = new Utente();
+				utente.setUsername(res.getString("nome_utente"));
+				utente.setEmail(res.getString("email"));
+				utente.setTipo(res.getInt("tipologia_utente"));
+				utente.setAbilitato(res.getBoolean("abilitato"));
+				users.add(utente);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		}
+		return users;
+	}
+
+	@Override
+	public ArrayList<Utente> getAllUsersByType(int tipo) {
+		ArrayList<Utente> users = new ArrayList<Utente>();
+		String query = "SELECT * FROM utente WHERE tipologia_utente=?";
+
+		try {
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setInt(1, tipo);
+			st.executeQuery();
+			ResultSet res = st.executeQuery();
+			while (res.next()) {
+				Utente utente = new Utente();
+				utente.setUsername(res.getString("nome_utente"));
+				utente.setEmail(res.getString("email"));
+				utente.setTipo(res.getInt("tipologia_utente"));
+				utente.setAbilitato(res.getBoolean("abilitato"));
+				users.add(utente);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		}
+		return users;		
 	}
 
 }

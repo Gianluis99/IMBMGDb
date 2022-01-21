@@ -15,6 +15,13 @@ public interface UtenteDao {
 	public String assignRoleToUser(String username, int tipo);
 	
 	public boolean searchByUsername(String  username);
+	
+	public ArrayList<Utente> getAllUsers( );
+	public ArrayList<Utente> getAllUsersBanned( );
+	public ArrayList<Utente> getAllUsersByType( int tipo );
+
+
+
 
 	
 }

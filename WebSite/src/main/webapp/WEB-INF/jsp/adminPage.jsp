@@ -105,6 +105,52 @@
 			<button class="btn shadow" id="btn2">Search</button>
 		</div>
 
+		<div class="tableBox">
+			<table class="shadow">
+				<thead>
+					<tr>
+						<th>Username</th>
+						<th>Email</th>
+						<th>Role</th>
+						<th>Ban/Unban</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${usersList}" var="user">
+						<tr>
+							<td>${user.username}</td>
+							<td>${user.email}</td>
+							<c:if test="${user.tipo==0}">
+								<td>Basic</td>
+							</c:if>
+							<c:if test="${user.tipo==1}">
+								<td>Admin</td>
+							</c:if>
+							<c:if test="${user.tipo==2}">
+								<td>Moderator</td>
+							</c:if>
+							<c:if test="${user.username != username}">
+								<c:if test="${user.abilitato}">
+									<td>
+										<button class="btnBan">Ban</button>
+									</td>
+								</c:if>
+								<c:if test="${!user.abilitato}">
+									<td>
+										<button class="btnUnban">Unban</button>
+									</td>
+								</c:if>
+							</c:if>
+							
+							<c:if test="${user.username == username}">
+								<td>you <td>
+							</c:if>
+
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
 	</div>
 
 

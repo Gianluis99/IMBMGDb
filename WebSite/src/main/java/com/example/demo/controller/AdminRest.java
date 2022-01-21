@@ -14,8 +14,7 @@ public class AdminRest {
 
 	@PostMapping("/assignRole")
 	public String doAssignRole(@RequestBody Utente utente,HttpServletResponse res) {
-		String result= Database.getInstance().getUtenteDao().assignRoleToUser(utente.getUserName(), utente.getTipo());
-		
+		String result= Database.getInstance().getUtenteDao().assignRoleToUser(utente.getUsername(), utente.getTipo());
 		return result;
 	}
 }

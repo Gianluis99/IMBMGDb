@@ -11,6 +11,29 @@
 	padding-top: 0;
 }
 
+table {
+	margin-top: 5%;
+	width: 100%;
+	padding: 1%;
+}
+
+table th {
+	color: black !important;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+}
+
+table td {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.tableBox {
+	margin-right: 2%;
+	overflow-x: auto;
+}
+
 p {
 	color: #969696;
 	font-size: 100%;
@@ -65,5 +88,37 @@ h1 {
 }
 
 .btn:hover {
+	background-color: #014947 !important;
+}
+
+.btnBan {
+	background-color: #e45601 !important;
+	text-align: center;
+	font-size: 100%;
+	border-radius: 5px;
+	color: black;
+	border: none;
+	font-weight: normal;
+	box-shadow: 1px 1px 1px 1px #c0c0c0;
+}
+
+.btnBan:hover {
+	background-color: #792e00 !important;
+}
+
+.btnUnban {
+	background-color: #02908B !important;
+	text-align: center;
+	font-size: 70%;
+	width:45px;
+	height:25px;
+	border-radius: 5px;
+	color: black;
+	border: none;
+	font-weight: normal;
+	box-shadow: 1px 1px 1px 1px #c0c0c0;
+}
+
+.btnUnban:hover {
 	background-color: #014947 !important;
 }
