@@ -18,6 +18,15 @@ public class Utente {
 		
 	}
 	
+	public Utente(String username, int tipo, boolean abilitato) {
+		super();
+		this.username = username;
+		this.tipo = tipo;
+		this.abilitato = abilitato;
+
+	
+	}
+	
 	public Utente(String username, String password) {
 		super();
 		this.username = username;
