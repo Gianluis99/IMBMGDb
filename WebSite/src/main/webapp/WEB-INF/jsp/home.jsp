@@ -30,7 +30,7 @@
 								<a class = "item left"> Poll </a>
 								<a class = "item center"> Lists </a>
 								<a class = "item right" href = "doLogout"> Logout </a>
-								<a class = "item right" href = "doLogout"> Logout </a>
+								<a class = "item right" href = "adminPage"> Admin Page </a>
 								
 							</div>
 						</div>
