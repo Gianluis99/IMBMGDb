@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.Database;
+import com.imbmgdb.model.TipoUtente;
 import com.imbmgdb.model.Utente;
 import com.imbmgdb.other.CheckString;
 import com.imbmgdb.other.Messages;
@@ -40,6 +41,8 @@ public class RegistrationController {
 		session.setAttribute("email", email);
 		session.setAttribute("password", password);
 		session.setAttribute("password", rePassword);
+		session.setAttribute("tipo", TipoUtente.BASE);
+
 
 
 

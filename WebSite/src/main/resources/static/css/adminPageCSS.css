@@ -11,10 +11,14 @@
 	padding-top: 0;
 }
 
+
+
 table {
 	margin-top: 5%;
 	width: 100%;
 	padding: 1%;
+	border-collapse: separate;
+	border-spacing:10px;
 }
 
 table th {
@@ -27,6 +31,10 @@ table th {
 table td {
 	text-align: center;
 	vertical-align: middle;
+}
+
+table tr {
+	margin: 2%;
 }
 
 .tableBox {
@@ -94,7 +102,9 @@ h1 {
 .btnBan {
 	background-color: #e45601 !important;
 	text-align: center;
-	font-size: 100%;
+	font-size: 70%;
+	width: 45px;
+	height: 25px;
 	border-radius: 5px;
 	color: black;
 	border: none;
@@ -110,8 +120,8 @@ h1 {
 	background-color: #02908B !important;
 	text-align: center;
 	font-size: 70%;
-	width:45px;
-	height:25px;
+	width: 45px;
+	height: 25px;
 	border-radius: 5px;
 	color: black;
 	border: none;

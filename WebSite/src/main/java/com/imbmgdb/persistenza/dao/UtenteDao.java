@@ -19,6 +19,10 @@ public interface UtenteDao {
 	public ArrayList<Utente> getAllUsers( );
 	public ArrayList<Utente> getAllUsersBanned( );
 	public ArrayList<Utente> getAllUsersByType( int tipo );
+	public Utente getUserByUsername( String username );
+	
+	public String banOrUnbanUser( String username,boolean ban );
+
 
 
 

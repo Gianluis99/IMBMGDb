@@ -45,6 +45,16 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+
+
+
+
+
+
 
 <script language="javascript" src="../js/adminPageSuggestions.js"></script>
 <script language="javascript" src="../js/modelloDati.js"></script>
@@ -61,7 +71,7 @@
 	</div>
 
 	<div class="assignRoleContainer shadow">
-		<h1>Assign role</h1>
+		<h1>Assign role or Remove</h1>
 		<p>A Moderator can publish a new Content, ban a user and delete a
 			user review</p>
 
@@ -71,6 +81,8 @@
 			<select class="userType shadow" id="userType1" name="userType1">
 				<option value="Admin">Admin</option>
 				<option value="Moderator">Moderator</option>
+				<option value="Remove">Remove</option>
+
 
 			</select> <input type="text" id="inputText1"
 				class="inputText  form-control-sm shadow border-0 "
@@ -102,33 +114,51 @@
 				class="inputText form-control-sm shadow border-0 "
 				placeholder="Search User Here...">
 
-			<button class="btn shadow" id="btn2">Search</button>
 		</div>
 
 		<div class="tableBox">
-			<table class="shadow">
+			<table id="usersTable" class="shadow">
 				<thead>
 					<tr>
 						<th>Username</th>
 						<th>Email</th>
 						<th>Role</th>
+						<th>Banned</th>
 						<th>Ban/Unban</th>
+
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach items="${usersList}" var="user">
-						<tr>
-							<td>${user.username}</td>
+						<tr id="row-${user.username}">
+							<td id="${user.username}">${user.username}</td>
 							<td>${user.email}</td>
-							<c:if test="${user.tipo==0}">
-								<td>Basic</td>
+
+							<td id="role-${user.username}"><c:if test="${user.tipo==0}">
+									Basic
+								</c:if> <c:if test="${user.tipo==1}">
+									Admin
+								</c:if> <c:if test="${user.tipo==2}">
+									Moderator
+								</c:if></td>
+
+
+							<c:if test="${user.username != username}">
+								<c:if test="${user.abilitato}">
+									<td> </td>
+								</c:if>
+								<c:if test="${!user.abilitato}">
+									<td>Banned</td>
+								</c:if>
 							</c:if>
-							<c:if test="${user.tipo==1}">
-								<td>Admin</td>
+
+							<c:if test="${user.username == username}">
+								<td>you
+								<td>
 							</c:if>
-							<c:if test="${user.tipo==2}">
-								<td>Moderator</td>
-							</c:if>
+
+
+
 							<c:if test="${user.username != username}">
 								<c:if test="${user.abilitato}">
 									<td>
@@ -141,10 +171,9 @@
 									</td>
 								</c:if>
 							</c:if>
-							
-							<c:if test="${user.username == username}">
-								<td>you <td>
-							</c:if>
+
+
+
 
 						</tr>
 					</c:forEach>

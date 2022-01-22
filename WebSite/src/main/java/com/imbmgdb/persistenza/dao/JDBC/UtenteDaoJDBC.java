@@ -54,7 +54,7 @@ public class UtenteDaoJDBC implements UtenteDao {
 			st.setDate(4, utente.getDataDiNascita());
 
 			st.setBoolean(5, true);
-			st.setInt(6, utente.getTipo());
+			st.setInt(6, 1);
 
 			int result = 0;
 			result = st.executeUpdate();
@@ -142,7 +142,7 @@ public class UtenteDaoJDBC implements UtenteDao {
 			PreparedStatement st = conn.prepareStatement(query);
 			st.setString(1, username);
 
-			ResultSet res = st.executeQuery(); 
+			ResultSet res = st.executeQuery();
 			if (res.next())
 				return true;
 
@@ -224,7 +224,56 @@ public class UtenteDaoJDBC implements UtenteDao {
 			e.printStackTrace();
 
 		}
-		return users;		
+		return users;
+	}
+
+	@Override
+	public Utente getUserByUsername(String username) {
+		String query = "SELECT * FROM utente where nome_utente = ?";
+		Utente utente = new Utente();
+
+		try {
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, username);
+			st.executeQuery();
+			ResultSet res = st.executeQuery();
+			while (res.next()) {
+				utente = new Utente();
+				utente.setUsername(res.getString("nome_utente"));
+				utente.setEmail(res.getString("email"));
+				utente.setTipo(res.getInt("tipologia_utente"));
+				utente.setAbilitato(res.getBoolean("abilitato"));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		}
+		return utente;
+	}
+
+	@Override
+	public String banOrUnbanUser(String username, boolean ban) {
+
+		String 	query = "UPDATE utente set abilitato = ? where nome_utente=? ";
+
+		try {
+			PreparedStatement st = conn.prepareStatement(query);
+			st = conn.prepareStatement(query);
+			st.setBoolean(1, ban);
+			st.setString(2, username);
+
+			int result = 0;
+			result = st.executeUpdate();
+
+			if (result > 0)
+				return Messages.SUCCESS;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		}
+		return Messages.ERROR;
 	}
 
 }
