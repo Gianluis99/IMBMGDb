@@ -128,6 +128,8 @@ public class UtenteDaoJDBC implements UtenteDao {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+			return Messages.ERROR;
+
 
 		}
 		return Messages.ERROR;
@@ -248,6 +250,7 @@ public class UtenteDaoJDBC implements UtenteDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 
+
 		}
 		return utente;
 	}
@@ -255,7 +258,7 @@ public class UtenteDaoJDBC implements UtenteDao {
 	@Override
 	public String banOrUnbanUser(String username, boolean ban) {
 
-		String 	query = "UPDATE utente set abilitato = ? where nome_utente=? ";
+		String query = "UPDATE utente set abilitato = ? where nome_utente=? ";
 
 		try {
 			PreparedStatement st = conn.prepareStatement(query);
@@ -270,7 +273,10 @@ public class UtenteDaoJDBC implements UtenteDao {
 				return Messages.SUCCESS;
 
 		} catch (SQLException e) {
+
 			e.printStackTrace();
+			return Messages.ERROR;
+
 
 		}
 		return Messages.ERROR;

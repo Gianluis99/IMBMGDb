@@ -6,9 +6,8 @@
 window.addEventListener("load", function() {
 	eventAutocomplite();
 	assignRole();
-	/*doBan();
-	doUnBan();*/
 	searchTable();
+	banUser();
 });
 
 
@@ -27,7 +26,6 @@ function assignRole() {
 	var modal = document.getElementById("myModal");
 	var span = document.getElementsByClassName("close")[0];
 	var textMessagePopUp = document.querySelector("#message");
-	var table = document.querySelector("#usersTable");
 
 	btn.addEventListener("click", function() {
 		const userType = document.querySelector("#userType1");
@@ -91,7 +89,6 @@ function assignRole() {
 
 				},
 				cancel: function() {
-					$.alert('Canceled!');
 				}
 			}
 		});
@@ -113,112 +110,120 @@ function assignRole() {
 
 }
 
-/*
-function doBan() {
-	const btn = document.querySelector("#btnBan-gianni");
 
 
-	btn.addEventListener("click", function() {
-		$.confirm({
-			title: 'Confirm!',
-			content: 'Are you sure you want to ban this user?',
-			buttons: {
-				confirm: function() {
-				var utente = new Utente("gianni", null, false);
-					$.ajax({
-						type: "POST",
-						url: "/banOrUnbanUser",
-						contentType: "application/json",
-						data: JSON.stringify(utente),
-						success: function(risposta) {
-							console.log(risposta);
-							$.alert(risposta);
+
+
+function banUser() {
+	var btns = document.querySelectorAll(".btnBan");
+
+
+	btns.forEach(function(btn) {
+
+		btn.addEventListener("click", function() {
+			console.log(btn.id);
+			console.log(btn);
+
+			$.confirm({
+				title: 'Confirm!',
+				content: 'Are you sure you want to ' + btn.textContent + ' ' + btn.id + '?',
+				buttons: {
+					confirm: function() {
+
+						var valueBan;
+						if (btn.textContent.includes("Ban")) {
+							valueBan = false;
+							console.log("assssssssssss");
+
 						}
+						else
+							valueBan = true;
+						var username = btn.id;
+						var utente = new Utente(username, null, valueBan);
+						$.ajax({
+							type: "POST",
+							url: "/banOrUnbanUser",
+							contentType: "application/json",
+							data: JSON.stringify(utente),
+							success: function(risposta) {
+								console.log(risposta);
+								$.alert(risposta);
 
-					});
+								var isType = document.querySelector("#is-" + username);
+								console.log(isType);
 
-				},
-				cancel: function() {
-					$.alert('Canceled!');
-				},
-				
-			}
+								if (valueBan) {//true quando voglio sbannare il bottone diventa rosso
+									btn.style.background = "#e45601";
+									btn.textContent = "Ban";
+									isType.innerHTML = "";
+								}
+								else {//false quando voglio bannare quindi il bottone diventa blu
+									btn.style.background  = "#02908B";
+									btn.textContent = "Unban";
+									isType.innerHTML = "Banned";
+
+
+								}
+
+
+							},
+							error: function(xhr) {
+
+								console.log(xhr.responseText);
+								$.alert({
+									title: 'Error!',
+									content: xhr.responseText,
+   									 icon: 'fa fa-warning'
+
+								});
+
+							}
+
+
+						});
+
+					},
+					cancel: function() {
+					},
+
+				}
+			});
+
 		});
 
-	});
-}
 
-function doUnBan() {
-	const btn = document.querySelector("#btnUnban-gigi1");
-
-
-	btn.addEventListener("click", function() {
-		$.confirm({
-			title: 'Confirm!',
-			content: 'Are you sure you want to Unban this user?',
-			buttons: {
-				confirm: function() {
-				var utente = new Utente("gigi1", null, true);
-					$.ajax({
-						type: "POST",
-						url: "/banOrUnbanUser",
-						contentType: "application/json",
-						data: JSON.stringify(utente),
-						success: function(risposta) {
-							console.log(risposta);
-							$.alert(risposta);
-						}
-
-					});
-
-				},
-				cancel: function() {
-					$.alert('Canceled!');
-				},
-				
-			}
-		});
 
 	});
-}
 
-*/
-
-function prova() {
-	$(document).ready(function() {
-		$('#usersTable tr').click(function(event) {
-			var elID = $(this).attr('id');
-			console.log(elID);
-		});
-	});
 }
 
 
 function searchTable() {
 
+	//ricerca dinamica tramite jquery nella tabella tramite un valore inserito in input text
+	$("#inputText2").on("keyup", function() {
+		var value = $(this).val().toLowerCase();
+		$("#usersTable tbody tr").filter(function() {
+			$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		});
+	});
 
-		$("#inputText2").on("keyup", function() {
-			var value = $(this).val().toLowerCase();
+
+	//oppure ricerca tramite filtro
+	$("#userType2").change(function() {
+
+		var value = $(this).val().toLowerCase();
+
+		if (value == "all") {
+			$("#usersTable tbody tr").filter(function() {
+				$(this).toggle($(this).text().toLowerCase().indexOf(" ") > -1)
+			});
+
+		}
+		else
 			$("#usersTable tbody tr").filter(function() {
 				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 			});
-		});
-	
-
-		$("#userType2").change(function() {
-
-			var value = $(this).val().toLowerCase();
-
-			if (value == "all") {
-				$("#usersTable tbody tr").filter(function() {
-					$(this).toggle($(this).text().toLowerCase().indexOf(" ") > -1)
-				});
-
-			}
-			else
-				$("#usersTable tbody tr").filter(function() {
-					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-				});
-		});
+	});
 
 }

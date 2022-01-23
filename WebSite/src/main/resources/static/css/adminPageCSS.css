@@ -11,14 +11,12 @@
 	padding-top: 0;
 }
 
-
-
 table {
 	margin-top: 5%;
 	width: 100%;
 	padding: 1%;
 	border-collapse: separate;
-	border-spacing:10px;
+	border-spacing: 10px;
 }
 
 table th {
@@ -100,7 +98,7 @@ h1 {
 }
 
 .btnBan {
-	background-color: #e45601 !important;
+	background-color: #e45601;
 	text-align: center;
 	font-size: 70%;
 	width: 45px;
@@ -113,22 +111,5 @@ h1 {
 }
 
 .btnBan:hover {
-	background-color: #792e00 !important;
-}
-
-.btnUnban {
-	background-color: #02908B !important;
-	text-align: center;
-	font-size: 70%;
-	width: 45px;
-	height: 25px;
-	border-radius: 5px;
-	color: black;
-	border: none;
-	font-weight: normal;
-	box-shadow: 1px 1px 1px 1px #c0c0c0;
-}
-
-.btnUnban:hover {
-	background-color: #014947 !important;
+	transform: scale(0.9);
 }

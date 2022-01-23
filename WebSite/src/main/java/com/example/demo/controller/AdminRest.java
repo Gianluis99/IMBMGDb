@@ -40,8 +40,10 @@ public class AdminRest {
 		Utente now = Database.getInstance().getUtenteDao().getUserByUsername(utente.getUsername());
 
 		// non si puo bannare un amministratore
-		if (now.getTipo() == TipoUtente.AMMINISTRATORE)
+		if (now.getTipo() == TipoUtente.AMMINISTRATORE) {
+			res.setStatus(500);
 			return Messages.ERROR_CANNOT_BAN_ADMIN;
+		}
 
 		HttpSession session = req.getSession(false);
 		String thisUsername = (String) session.getAttribute("username");
@@ -50,11 +52,16 @@ public class AdminRest {
 		Utente you = Database.getInstance().getUtenteDao().getUserByUsername(thisUsername);
 
 		// un moderatore non puo bannare un'altro moderatore
-		if (now.getTipo() == TipoUtente.MODERATATORE && you.getTipo() == TipoUtente.MODERATATORE)
+		if (now.getTipo() == TipoUtente.MODERATATORE && you.getTipo() == TipoUtente.MODERATATORE) {
+			res.setStatus(500);
 			return Messages.ERROR_CANNOT_BAN_MODERATOR;
+		}
 
 		String result = Database.getInstance().getUtenteDao().banOrUnbanUser(utente.getUsername(),
 				utente.isAbilitato());
+		if (!result.equals(Messages.SUCCESS))
+			res.setStatus(500);
+
 		return result;
 	}
 }

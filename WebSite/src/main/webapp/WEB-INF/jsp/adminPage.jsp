@@ -145,10 +145,10 @@
 
 							<c:if test="${user.username != username}">
 								<c:if test="${user.abilitato}">
-									<td> </td>
+									<td id="is-${user.username}"></td>
 								</c:if>
 								<c:if test="${!user.abilitato}">
-									<td>Banned</td>
+									<td id="is-${user.username}">Banned</td>
 								</c:if>
 							</c:if>
 
@@ -160,16 +160,15 @@
 
 
 							<c:if test="${user.username != username}">
-								<c:if test="${user.abilitato}">
-									<td>
-										<button class="btnBan">Ban</button>
-									</td>
-								</c:if>
-								<c:if test="${!user.abilitato}">
-									<td>
-										<button class="btnUnban">Unban</button>
-									</td>
-								</c:if>
+								<td>
+									<button
+										<c:if test="${!user.abilitato}">style="background: #02908B;"</c:if>
+										id="${user.username}" class="btnBan">
+										<c:if test="${user.abilitato}">Ban</c:if>
+										<c:if test="${!user.abilitato}">Unban</c:if>
+									</button>
+								</td>
+
 							</c:if>
 
 
