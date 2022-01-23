@@ -20,7 +20,7 @@ public class LoginController {
 	//Servlet per mostrare la pagina del login
 	@GetMapping("/loginPage")
 	public String loginPage() {
-		return "login";
+		return "loginPage";
 	}
 	
 	//Servlet per fare il login

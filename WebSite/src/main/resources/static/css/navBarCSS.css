@@ -1,0 +1,117 @@
+body {
+	margin: 0;
+	background-color: #002134;
+}
+			
+.topnav {
+	margin-left: 26px;
+	margin-right: 26px;
+	overflow: hidden;
+    background-color: #002134;
+}
+			
+a {
+	float: left;
+	display: block;
+	text-align: center;
+	padding: 24px 26px;
+	text-decoration: none;
+	border-bottom: 3px solid transparent;
+	width: 160px;
+}
+			
+a:hover {
+    color: #B4FBF8;
+}
+			
+.topnav .search-container {
+	float: right;
+}
+			
+.topnav input[type=text] {
+	width: 500px;
+	padding: 16px;
+	margin-top: 8px;
+
+	background-color: #002134;
+	border-radius: 5px 0px 0px 5px;
+	border: 2px solid #02908B;
+	outline: none;
+	height: 66px;
+}
+			
+.topnav .search-container button {
+	float: right;
+	padding: 16px;
+	margin-top: 8px;
+	background: #02908B;
+	color: #002134;
+	border: none;
+	cursor: pointer;
+	border-radius: 0px 5px 5px 0px;
+	height: 66px;
+}
+			
+.topnav .search-container button:hover {
+	background-color: #B4FBF8;
+}
+			
+.dropdown {
+	white-space: nowrap;
+    overflow: hidden;
+	text-overflow: ellipsis; 
+	width: 160px;
+	padding: 24px 26px;
+	float: left;
+	display: block;
+	text-align: center;
+	border-bottom: 3px solid transparent;
+	text-decoration: none;
+	border-radius: 10px 10px 10px 10px;
+	background-color: #02908b;
+	color: #002134;
+}
+			
+.dropdown-content {
+	position: absolute;
+	display: none;
+	background-color: #02908B;
+	min-width: 160px;
+	margin-top: 26px;
+	margin-left: -26px;
+	text-align: center;
+	color: #002134;
+	border-radius: 0px 10px 10px 10px;
+	z-index: 1;
+}
+
+.dropdown:hover {
+	color: #B4FBF8;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.item {
+	 padding: 24px, 26px;
+	 width: 160px;
+	 text-decoration: none;
+	 display: block;
+	 color: #002134;
+	 text-align: center;
+	 
+}
+
+.center:hover { color: #002134; background-color: #B4FBF8;  }
+
+.left:hover {
+	 border-radius: 0px 0px 0px 10px;
+	 color: #002134; 
+	 background-color: #B4FBF8;
+}
+
+.right:hover {
+	 border-radius: 0px 10px 10px 0px;
+	 color: #002134; 
+	 background-color: #B4FBF8;
+}
+
+.dropdown:hover .dropdown-content { display: block; }

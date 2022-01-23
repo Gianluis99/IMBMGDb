@@ -3,6 +3,7 @@
   	font-weight: bold;
   	font-size: 26px;
   	color: #02908B;
+  	box-sizing: border-box;
 }
 
 button {
@@ -12,16 +13,6 @@ button {
  	width: 150px;
  	background-color: #02908B;
  	color: #002134;
- 	border-radius: 5px;
-}
-
-button2 {
-	padding: 0px 0px 0px 0px;
- 	border: none;
- 	height: 50px;
- 	width: 50px;
- 	background-color: #002134;
- 	color: #02908B;
  	border-radius: 5px;
 }
 

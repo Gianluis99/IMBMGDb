@@ -13,6 +13,7 @@ import com.imbmgdb.model.Contenuto;
 
 @Controller
 public class HomeController {
+	
 	//Servlet per andare nella home. Ogni volta che si va nella home vengono settati 
 	//gli attributi del req permettendo di passare alla jsp le liste calcolate per gli slider.
 	@GetMapping("/")
@@ -20,7 +21,7 @@ public class HomeController {
         req.setAttribute("mostPopularContents", mostPopularContents());
         req.setAttribute("newContents", newContents());
         req.setAttribute("comingSoonContents", comingSoonContents());
-		return "home";
+		return "homePage";
 	}
 	
 	//Calcola i contenuti più popolari prelevandoli dal db e inserendoli in una lista.

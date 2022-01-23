@@ -8,7 +8,7 @@
 	
 	    <meta charset="utf-8" />
 	    
-	    <link rel="stylesheet" href="/css/indexCSS.css">
+	    <link rel="stylesheet" href="/css/sectionCSS.css">
 	    <link rel="stylesheet" href="/css/commonCSS.css">
 	    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 	    
@@ -18,40 +18,8 @@
 	
 	<body>
 	
-		<header>
-		</header>
+		<%@ include file="navBar.jsp" %>
 		
-		<!-- Nella nav vengono interrogati gli attributi degli scoped obj (tipo le req). jstl cerca un attributo che si chiama username. -->
-		<nav>
-			<ul>
-				<c:if test = "${username != null}">
-					<li>
-						<div class = "dropdown"> ${username} 
-							<div class = "dropdown-content">
-								<a class = "item left"> Poll </a>
-								<a class = "item center"> Lists </a>
-								<a class = "item right" href = "doLogout"> Logout </a>
-							</div>
-						</div>
-					</li>
-				</c:if>
-				<c:if test = "${username == null}">
-					<li><a href = "loginPage">Login</a></li>
-				</c:if>
-				
-      			<li><a>Home</a></li>
-      			<li><a>Movies</a></li>
-      			<li><a>Book</a></li>
-     			<li><a>Music</a></li>
-     			<li><a>Games</a></li>
-    		</ul>
-    		
-    		<div class = "rightContainer">
-	    		<button type="submit" name = "searchButton"> Search </button>
-	      		<input type="text" placeholder="Type something.." name="searchField">
-    		</div>
-		</nav>
-			
 		<!--  
 		<section class = "swiperSection">
 			<h2 class="titleSection">Popular movies now</h2>
