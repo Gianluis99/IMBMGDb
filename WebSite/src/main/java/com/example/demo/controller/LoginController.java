@@ -37,8 +37,10 @@ public class LoginController {
 		
 		if(result.equals(Messages.SUCCESS)) {
 			session.setAttribute("username", username);
+			
 			Utente uLog=Database.getInstance().getUtenteDao().getUserByUsername(username);
 			session.setAttribute("tipo", uLog.getTipo());
+			
 			res.sendRedirect("/");
 		}
 		else {

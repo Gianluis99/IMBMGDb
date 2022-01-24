@@ -81,7 +81,7 @@
 		<div class="assignRoleContainer shadow">
 			<h1>Assign role or Remove</h1>
 			<p>A Moderator can publish a new Content, ban a user and delete a
-				user review</p>
+				user review.</p>
 
 
 			<div class="info-container">
@@ -108,7 +108,7 @@
 
 	<div class="assignRoleContainer shadow">
 		<h1>See all users</h1>
-		<p>Here you can see all user in the system and and banning them.</p>
+		<p>Here you can see all user in the system and banning them.</p>
 		<div class="info-container">
 
 			<select class="userType shadow" id="userType2" name="userType2">

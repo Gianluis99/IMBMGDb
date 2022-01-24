@@ -26,7 +26,6 @@ public class AdminController {
 		HttpSession session = req.getSession(false);
 
 		int userType= (int) session.getAttribute("tipo");
-		System.out.println(userType);
 		
 		if(userType==1 ||userType ==2)
 			return "adminPage";
