@@ -29,7 +29,7 @@ public class LoginController {
 		HttpSession session = req.getSession(true);
 		
 		Utente user = new Utente();
-		user.setUserName(username);
+		user.setUsername(username);
 		user.setPassword(password);
 		
 		String result = Database.getInstance().getUtenteDao().checkUser(user);
