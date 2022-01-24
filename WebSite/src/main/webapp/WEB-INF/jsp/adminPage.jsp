@@ -64,44 +64,51 @@
 </head>
 
 <body>
+
+
+
 	<div class="infoContainer">
-		<h1>Admin Page</h1>
-		<p>On this page you can assign a role to user, and you can
-			ban/unban a user.</p>
+		<h1 id="typePage">
+			<c:if test="${tipo==1}"> Admin </c:if>
+			<c:if test="${tipo==2}"> Moderator </c:if>
+			Page
+		</h1>
+
 	</div>
 
-	<div class="assignRoleContainer shadow">
-		<h1>Assign role or Remove</h1>
-		<p>A Moderator can publish a new Content, ban a user and delete a
-			user review</p>
+
+	<c:if test="${tipo==1}">
+		<div class="assignRoleContainer shadow">
+			<h1>Assign role or Remove</h1>
+			<p>A Moderator can publish a new Content, ban a user and delete a
+				user review</p>
 
 
-		<div class="info-container">
+			<div class="info-container">
 
-			<select class="userType shadow" id="userType1" name="userType1">
-				<option value="Admin">Admin</option>
-				<option value="Moderator">Moderator</option>
-				<option value="Remove">Remove</option>
+				<select class="userType shadow" id="userType1" name="userType1">
+					<option value="Admin">Admin</option>
+					<option value="Moderator">Moderator</option>
+					<option value="Remove">Remove</option>
 
 
-			</select> <input type="text" id="inputText1"
-				class="inputText  form-control-sm shadow border-0 "
-				placeholder="Select User Here...">
+				</select> <input type="text" id="inputText1"
+					class="inputText  form-control-sm shadow border-0 "
+					placeholder="Select User Here...">
 
-			<button class="btn shadow" id="btn1">Add</button>
+				<button class="btn shadow" id="btn1">Add</button>
+			</div>
+
+
+
 		</div>
-
-
-
-	</div>
-
-
-
+	</c:if>
 
 
 
 	<div class="assignRoleContainer shadow">
 		<h1>See all users</h1>
+		<p>Here you can see all user in the system and and banning them.</p>
 		<div class="info-container">
 
 			<select class="userType shadow" id="userType2" name="userType2">
@@ -171,9 +178,6 @@
 
 							</c:if>
 
-
-
-
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -196,11 +200,6 @@
 		</div>
 
 	</div>
-
-
-
-
-
 </body>
 
 

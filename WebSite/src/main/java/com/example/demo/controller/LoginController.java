@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.Database;
+import com.imbmgdb.model.TipoUtente;
 import com.imbmgdb.model.Utente;
 import com.imbmgdb.other.Messages;
 
@@ -36,6 +37,8 @@ public class LoginController {
 		
 		if(result.equals(Messages.SUCCESS)) {
 			session.setAttribute("username", username);
+			Utente uLog=Database.getInstance().getUtenteDao().getUserByUsername(username);
+			session.setAttribute("tipo", uLog.getTipo());
 			res.sendRedirect("/");
 		}
 		else {

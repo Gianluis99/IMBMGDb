@@ -1,0 +1,16 @@
+body {
+	background-color: #002134 !important;
+	color: #02908B;
+	font-size: 40px;
+}
+
+.messageBox {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.infoBox {
+	margin-top: 10%;
+}

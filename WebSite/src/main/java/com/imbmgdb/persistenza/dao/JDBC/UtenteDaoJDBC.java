@@ -54,7 +54,7 @@ public class UtenteDaoJDBC implements UtenteDao {
 			st.setDate(4, utente.getDataDiNascita());
 
 			st.setBoolean(5, true);
-			st.setInt(6, 1);
+			st.setInt(6, 0);
 
 			int result = 0;
 			result = st.executeUpdate();

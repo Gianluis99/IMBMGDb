@@ -22,92 +22,99 @@ function eventAutocomplite() {
 
 function assignRole() {
 
-	const btn = document.querySelector("#btn1");
-	var modal = document.getElementById("myModal");
-	var span = document.getElementsByClassName("close")[0];
-	var textMessagePopUp = document.querySelector("#message");
+	const textType = document.querySelector("#typePage").textContent;
+	console.log(textType);
 
-	btn.addEventListener("click", function() {
-		const userType = document.querySelector("#userType1");
-		const usernameText = document.querySelector("#inputText1");
-
-		const type = userType.value;
-		var username = usernameText.value;
-		usernameText.value = "";
-		var numtype;
-
-		var message;
-
-		console.log(type);
-		if (type === "Admin") {
-			numtype = 1;
-			message = 'Are you sure to make ' + username + ' ' + type + ' ?';
-
-		}
-		else if (type === "Moderator") {
-			numtype = 2;
-			message = 'Are you sure to make ' + username + ' ' + type + ' ?';
-		}
-		else if (type === "Remove") {
-			numtype = 0;
-			message = 'Are you sure to Remove ' + username + ' ?';
-
-		}
-
-		$.confirm({
-			title: 'Confirm!',
-			content: message,
-			buttons: {
-				confirm: function() {
-					var utente = new Utente(username, numtype, true);
-					$.ajax({
-						type: "POST",
-						url: "/assignRole",
-						contentType: "application/json",
-						data: JSON.stringify(utente),
-						success: function(risposta) {
-							console.log(risposta);
-							textMessagePopUp.innerHTML = risposta;
-							modal.style.display = "block";
-							var userNameRow = document.querySelector("#row-" + username);
-							var userRole = userNameRow.querySelector("#role-" + username);
-
-							if (type === "Remove")
-								userRole.innerHTML = "Basic";
-							else
-								userRole.innerHTML = type;
-
-						},
-						error: function(xhr) {
-
-							textMessagePopUp.innerHTML = xhr.responseText;
-							modal.style.display = "block";
-						}
-
-					});
+	if (textType.includes("Admin")) {
 
 
-				},
-				cancel: function() {
-				}
+		const btn = document.querySelector("#btn1");
+		var modal = document.getElementById("myModal");
+		var span = document.getElementsByClassName("close")[0];
+		var textMessagePopUp = document.querySelector("#message");
+
+		btn.addEventListener("click", function() {
+			const userType = document.querySelector("#userType1");
+			const usernameText = document.querySelector("#inputText1");
+
+			const type = userType.value;
+			var username = usernameText.value;
+			usernameText.value = "";
+			var numtype;
+
+			var message;
+
+			console.log(type);
+			if (type === "Admin") {
+				numtype = 1;
+				message = 'Are you sure to make ' + username + ' ' + type + ' ?';
+
 			}
+			else if (type === "Moderator") {
+				numtype = 2;
+				message = 'Are you sure to make ' + username + ' ' + type + ' ?';
+			}
+			else if (type === "Remove") {
+				numtype = 0;
+				message = 'Are you sure to Remove ' + username + ' ?';
+
+			}
+
+			$.confirm({
+				title: 'Confirm!',
+				content: message,
+				buttons: {
+					confirm: function() {
+						var utente = new Utente(username, numtype, true);
+						
+						$.ajax({
+							type: "POST",
+							url: "/assignRole",
+							contentType: "application/json",
+							data: JSON.stringify(utente),
+							success: function(risposta) {
+								console.log(risposta);
+								textMessagePopUp.innerHTML = risposta;
+								modal.style.display = "block";
+								var userNameRow = document.querySelector("#row-" + username);
+								var userRole = userNameRow.querySelector("#role-" + username);
+
+								if (type === "Remove")
+									userRole.innerHTML = "Basic";
+								else
+									userRole.innerHTML = type;
+
+							},
+							error: function(xhr) {
+							//Se si verifica un errore si vedrà solamente il mesaggio
+								textMessagePopUp.innerHTML = xhr.responseText;
+								modal.style.display = "block";
+							}
+
+						});
+
+
+					},
+					cancel: function() {
+					}
+				}
+			});
+
+
+
 		});
 
-
-
-	});
-
-	span.onclick = function() {
-		modal.style.display = "none";
-	}
-
-	//quando si clicca sullo schermo il popup se ne va
-	window.onclick = function(event) {
-		if (event.target == modal) {
+		span.onclick = function() {
 			modal.style.display = "none";
 		}
-	}
 
+		//quando si clicca sullo schermo il popup se ne va (alternativa a jquery)
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	}
 }
 
 
@@ -115,6 +122,9 @@ function assignRole() {
 
 
 function banUser() {
+
+	//ci prendiamo tutti i button presenti che hanno come id il nome utente in modo tale
+	//che sappiamo a quale utente ci stiamo riferendo
 	var btns = document.querySelectorAll(".btnBan");
 
 
@@ -122,7 +132,6 @@ function banUser() {
 
 		btn.addEventListener("click", function() {
 			console.log(btn.id);
-			console.log(btn);
 
 			$.confirm({
 				title: 'Confirm!',
@@ -133,7 +142,6 @@ function banUser() {
 						var valueBan;
 						if (btn.textContent.includes("Ban")) {
 							valueBan = false;
-							console.log("assssssssssss");
 
 						}
 						else
@@ -158,7 +166,7 @@ function banUser() {
 									isType.innerHTML = "";
 								}
 								else {//false quando voglio bannare quindi il bottone diventa blu
-									btn.style.background  = "#02908B";
+									btn.style.background = "#02908B";
 									btn.textContent = "Unban";
 									isType.innerHTML = "Banned";
 
@@ -173,7 +181,6 @@ function banUser() {
 								$.alert({
 									title: 'Error!',
 									content: xhr.responseText,
-   									 icon: 'fa fa-warning'
 
 								});
 
