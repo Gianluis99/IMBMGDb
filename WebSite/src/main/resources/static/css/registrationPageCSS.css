@@ -63,7 +63,7 @@ input[type=text], input[type=password], input[type=email], select {
 	outline: none;
 }
 
-input[type=text]:hover, input[type=password]:hover {
+input[type=text]:hover, input[type=password]:hover, input[type=email]:hover {
 	color: #B4FBF8;
 	border-color: #B4FBF8;
 }

@@ -1,3 +1,8 @@
+
+body {
+	background-color: #002134 !important;
+}
+
 * {
 	font-family: "Century Gothic", sans-serif;
 	font-weight: bold;
@@ -53,6 +58,9 @@ h1 {
 	display: flex;
 }
 
+
+
+
 .form-control-sm {
 	outline: none;
 	margin-right: 5%;
@@ -70,6 +78,8 @@ h1 {
 	padding-bottom: 5%;
 	margin-bottom: 5%;
 	border-radius: 5px;
+		background-color: #00253c!important;
+	
 }
 
 .userType {
@@ -91,6 +101,7 @@ h1 {
 	background-color: #02908B !important;
 	text-align: center;
 	border-radius: 10px;
+	
 }
 
 .btn:hover {
@@ -98,7 +109,7 @@ h1 {
 }
 
 .btnBan {
-	background-color: #e45601;
+	background-color: #bf0000;
 	text-align: center;
 	font-size: 70%;
 	width: 45px;
@@ -107,7 +118,7 @@ h1 {
 	color: black;
 	border: none;
 	font-weight: normal;
-	box-shadow: 1px 1px 1px 1px #c0c0c0;
+	box-shadow: 1px 1px 2px 2px #001522;
 }
 
 .btnBan:hover {

@@ -78,7 +78,7 @@
 
 
 	<c:if test="${tipo==1}">
-		<div class="assignRoleContainer shadow">
+		<div class="assignRoleContainer shadow-lg">
 			<h1>Assign role or Remove</h1>
 			<p>A Moderator can publish a new Content, ban a user and delete a
 				user review.</p>
@@ -106,7 +106,7 @@
 
 
 
-	<div class="assignRoleContainer shadow">
+	<div class="assignRoleContainer shadow-lg">
 		<h1>See all users</h1>
 		<p>Here you can see all user in the system and banning them.</p>
 		<div class="info-container">

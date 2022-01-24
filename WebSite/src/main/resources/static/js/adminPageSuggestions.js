@@ -161,7 +161,7 @@ function banUser() {
 								console.log(isType);
 
 								if (valueBan) {//true quando voglio sbannare il bottone diventa rosso
-									btn.style.background = "#e45601";
+									btn.style.background = "#bf0000";
 									btn.textContent = "Ban";
 									isType.innerHTML = "";
 								}
