@@ -18,6 +18,7 @@ public class Messages {
 	public final static String ERROR_CANNOT_REMOVE_ADMIN = "Attention! You cannot remove an admin!";
 	public final static String ERROR_CANNOT_BAN_ADMIN = "Attention! You cannot ban an admin!";
 	public final static String ERROR_CANNOT_BAN_MODERATOR = "Attention! You cannot ban another moderator!";
+	public final static String ERROR_CANNOT_ASSIGN_BANNED = "Attention! You cannot assign a role to banned user. Unban this user!";
 
 	
 }

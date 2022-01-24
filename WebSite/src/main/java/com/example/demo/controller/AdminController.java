@@ -25,8 +25,10 @@ public class AdminController {
 		return "adminPage";
 	}
 
+	
+	//tramite jquery gli passo un term in modo tale posso ottenere tutti gli user presenti facendo like nel db
 	@RequestMapping(value = "/searchUser")
-	@ResponseBody
+	@ResponseBody  
 	public List<String> searchUserInDB(
 			@RequestParam(value = "term", required = false, defaultValue = "") String username) {
 

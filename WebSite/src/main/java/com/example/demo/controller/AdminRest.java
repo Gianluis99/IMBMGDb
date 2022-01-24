@@ -25,6 +25,11 @@ public class AdminRest {
 			resp.setStatus(500);
 			return Messages.ERROR_CANNOT_REMOVE_ADMIN;
 		}
+		if (!now.isAbilitato()) {
+			resp.setStatus(500);
+			return Messages.ERROR_CANNOT_ASSIGN_BANNED;
+		}
+		
 
 		String result = Database.getInstance().getUtenteDao().assignRoleToUser(utente.getUsername(), utente.getTipo());
 
