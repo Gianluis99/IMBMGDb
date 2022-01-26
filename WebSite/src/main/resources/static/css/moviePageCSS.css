@@ -6,6 +6,8 @@
 	border-radius: 20px;
 	padding: 5;
 	margin: 3;
+	width: auto;
+	margin-left: 10px;
 }
 
 .categorytext:hover {

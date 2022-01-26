@@ -12,6 +12,7 @@
 
 <link href="css/genrePageCSS.css" rel="stylesheet" type="text/css" />
 
+<script type="text/javascript" src="../js/genrePage.js"></script>
 </head>
 
 <body>
@@ -26,21 +27,19 @@
 		<h2>Movie</h2>
 
 
-		<h1>Avventura</h1>
+		<h1 id="genreId" title="${genreId}">${genreName}</h1>
 	</div>
 	
 	
-	<div class="filmContainer  mt-6 mb-5 ">
+	<div class="filmContainer">
 
-		<c:forEach items="${prove}" var="prova">
-			<div class="movie m-2 mb-4">
+			<div class="movie">
 				<a href="${prova.nome}"> <img id="imgMovie" class="img"
-					src="${prova.url}"> <img class="iconAdd"
-					src="immagini/iconAddToList.png">
+					src="${prova.url}"> 
 				</a>
 				<div class="down">
 				
-					<a href="${prova.nome}" class="title"> ${prova.nome} </a>
+					<a href="${prova.nome}" class="title"> nome </a>
 					<div class="divVoti">
 						<img class="iconStar" src="immagini/starIcon.png">
 						<p class="voti">7.7</p>
@@ -48,7 +47,7 @@
 					</div>
 				</div>
 			</div>
-		</c:forEach>
+
 	</div>
 	
 

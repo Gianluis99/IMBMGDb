@@ -17,24 +17,15 @@
 
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
+<script type="text/javascript" src="../js/movieGenres.js"></script>
+
 </head>
 
 <body>
 
 	<%@ include file="navBar.jsp"%>
 
-	<div class="categoriesContainer">
-		<p class="categorytext">Action</p>
-		<p class="categorytext">Adventure</p>
-		<p class="categorytext">Animation</p>
-		<p class="categorytext">Comedy</p>
-		<p class="categorytext">Crime</p>
-		<p class="categorytext">Documentary</p>
-		<p class="categorytext">Drama</p>
-		<p class="categorytext">fantascienza</p>
-		<p class="categorytext">commedia</p>
-		
-	</div>
+	<div class="categoriesContainer" id="cat-container"></div>
 
 
 </body>
