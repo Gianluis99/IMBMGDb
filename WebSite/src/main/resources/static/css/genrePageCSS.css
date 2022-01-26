@@ -31,19 +31,21 @@ h2 {
 	flex-wrap: wrap;
 	justify-content: center;
 	position: relative;
+	padding-left:5%;
+	padding-right:5%;
 }
 
 .movie {
-	overflow: hidden;
+	overflow: none;
 	width: 200px;
 	margin:2%;
+	
 		
 }
 
 .movie:hover {
 	transform: scale(1.1);
 	transition: all 0.8s ease-in-out;
-	margin: 0 10px;
 }
 
 .img {
