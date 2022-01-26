@@ -8,11 +8,16 @@
 <head>
 <meta charset="utf-8" />
 <title>Genre</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+
 <link rel="icon" href="" type="image/x-icon" />
 
 <link href="css/genrePageCSS.css" rel="stylesheet" type="text/css" />
 
+
 <script type="text/javascript" src="../js/genrePage.js"></script>
+
 </head>
 
 <body>
@@ -29,27 +34,29 @@
 
 		<h1 id="genreId" title="${genreId}">${genreName}</h1>
 	</div>
-	
-	
-	<div class="filmContainer">
 
-			<div class="movie">
-				<a href="${prova.nome}"> <img id="imgMovie" class="img"
-					src="${prova.url}"> 
-				</a>
-				<div class="down">
-				
-					<a href="${prova.nome}" class="title"> nome </a>
-					<div class="divVoti">
-						<img class="iconStar" src="immagini/starIcon.png">
-						<p class="voti">7.7</p>
 
-					</div>
+	<div class="filmContainer" id="filmContainer">
+
+		<div class="movie">
+			<a href=""> <img id="imgMovie" class="img"
+				src="https://i.pinimg.com/originals/e7/4d/55/e74d559716dc999fe06d887b843689c7.jpg">
+			</a>
+			<div class="down">
+
+				<a href="${prova.nome}" class="title"> nome </a>
+				<div class="divVoti">
+					<img class="iconStar" src="immagini/starIcon.png">
+					<p class="voti">7.7</p>
+
 				</div>
 			</div>
+		</div>
+
+
 
 	</div>
-	
+
 
 
 
