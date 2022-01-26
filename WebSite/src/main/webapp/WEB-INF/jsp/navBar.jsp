@@ -39,7 +39,7 @@
 			<a href="loginPage">Login</a>
 		</c:if>
 
-		<a href="/">Home</a> <a>Movie</a> <a>Game</a> <a>Book</a> <a>Music</a>
+		<a href="/">Home</a> <a href="/MoviePage">Movie</a> <a>Game</a> <a>Book</a> <a>Music</a>
 		<div class="search-container">
 			<form action="/action_page.php">
 				<input type="text" placeholder="Search.." name="search">

@@ -1,0 +1,23 @@
+
+.categorytext {
+	color: #FFFFFFB3;
+	background-color: #02908B !important;
+	display: inline-block;
+	border-radius: 20px;
+	padding: 5;
+	margin: 3;
+}
+
+.categorytext:hover {
+	background-color:  #014947 !important;
+	cursor: hand;
+}
+
+.categoriesContainer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	position: relative;
+	margin-top:5%;
+}
+
