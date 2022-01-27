@@ -108,7 +108,7 @@ function setGenres() {
 
 
 
-function moviePopolar() {
+function getMovie() {
 	const KEY = "ad6f11886b4ff2413c3f2b47f875e24a";
 	const URL = "https://api.themoviedb.org/3";
 
@@ -123,7 +123,6 @@ function moviePopolar() {
 		$.each(res, function(index, item) {
 
 			console.log(item);
-			//$("<p>").text().appendTo($("#resultBox"));
 
 		});
 

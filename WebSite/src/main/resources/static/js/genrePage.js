@@ -5,23 +5,13 @@ window.addEventListener("load", function() {
 
 
 });
-/*
-
-/*
-https://api.themoviedb.org/3/discover/movie?api_key=
-ad6f11886b4ff2413c3f2b47f875e24a&
-language=en-US&sort_by=popularity.desc&with_genres=14&
-with_watch_monetization_types=flatrate
-
-
-*/
 
 
 
 function getMovieByGenres() {
 	var container = document.querySelector("#filmContainer");
 
-
+	
 	const genre = document.querySelector("#genreId").title;
 	console.log(genre);
 	const KEY = "ad6f11886b4ff2413c3f2b47f875e24a";
@@ -47,7 +37,7 @@ function getMovieByGenres() {
 					</a>
 					
 					<div class="down">
-						<a href="nome" class="title">`+item.title+` nome </a>
+						<a href="nome" class="title">`+item.title+`</a>
 						<div class="divVoti">
 						<img class="iconStar" src="immagini/starIcon.png">
 						<p class="voti">`+item.vote_average+` Imdb</p>

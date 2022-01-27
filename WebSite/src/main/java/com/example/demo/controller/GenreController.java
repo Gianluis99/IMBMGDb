@@ -15,7 +15,6 @@ public class GenreController {
 		req.setAttribute("genreId", id);
 		req.setAttribute("genreName", name);
 
-		System.out.println(id);
 		return "genrePage";
 	}
 }
