@@ -27,7 +27,7 @@ public class ContenutoDaoJDBC implements ContenutoDao {
 			st.setLong(1, c.getId());
 			st.setString(2, c.getTitolo());
 			st.setString(3, c.getDescrizione());
-			st.setDate(4, c.getData());
+			st.setString(4, c.getData());
 			st.setString(5, c.getProduttore());
 			st.setString(6, c.getUrlImg());
 			st.setInt(7, c.getTipoContenuto());
@@ -62,7 +62,7 @@ public class ContenutoDaoJDBC implements ContenutoDao {
 				contenuto.setId(res.getLong("id"));
 				contenuto.setTitolo(res.getString("titolo"));
 				contenuto.setDescrizione(res.getString("descrizione"));
-				contenuto.setData(res.getDate("data"));
+				contenuto.setData(res.getString("data"));
 				contenuto.setProduttore(res.getString("produttore"));
 				contenuto.setUrlImg(res.getString("url_img"));
 				contenuto.setUrlTrailer(res.getString("url_trailer"));
@@ -93,7 +93,7 @@ public class ContenutoDaoJDBC implements ContenutoDao {
 				contenuto.setId(res.getLong("id"));
 				contenuto.setTitolo(res.getString("titolo"));
 				contenuto.setDescrizione(res.getString("descrizione"));
-				contenuto.setData(res.getDate("data"));
+				contenuto.setData(res.getString("data"));
 				contenuto.setProduttore(res.getString("produttore"));
 				contenuto.setUrlImg(res.getString("url_img"));
 				contenuto.setUrlTrailer(res.getString("url_trailer"));

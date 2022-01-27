@@ -96,7 +96,7 @@ function setGenres() {
 		a.id = genre.id;
 		var linkText = document.createTextNode(genre.name);
 		a.appendChild(linkText);
-		a.href = "GenrePage?id="+a.id+"&name="+genre.name;
+		a.href = "GenrePage?id="+a.id+"&name="+genre.name+"&type=Movie";
 
 		container.appendChild(a);
 
@@ -108,23 +108,3 @@ function setGenres() {
 
 
 
-function getMovie() {
-	const KEY = "ad6f11886b4ff2413c3f2b47f875e24a";
-	const URL = "https://api.themoviedb.org/3";
-
-	const URL_search = "/search/movie?api_key="
-	const QUERY = "&query=";
-
-
-	var allUrl = URL + URL_search + KEY + QUERY + value;
-
-	$.getJSON(allUrl, function(res) {
-
-		$.each(res, function(index, item) {
-
-			console.log(item);
-
-		});
-
-	});
-}

@@ -25,14 +25,15 @@
 
 <link href="css/genrePageCSS.css" rel="stylesheet" type="text/css" />
 
-
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="../js/genrePage.js"></script>
 
 </head>
 
 <body>
 
-	
+
 
 	<header></header>
 
@@ -40,7 +41,7 @@
 
 	<div class="top">
 
-		<h2>Movie</h2>
+		<h2>${typeContent}</h2>
 
 
 		<h1 id="genreId" title="${genreId}">${genreName}</h1>

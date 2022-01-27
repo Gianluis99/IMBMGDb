@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class GenreController {
 
 	@GetMapping("/GenrePage")
-	public String pageAdmin(@RequestParam  int id,@RequestParam  String name, HttpServletRequest req) {
+	public String pageAdmin(@RequestParam  int id,@RequestParam  String name,@RequestParam  String type, HttpServletRequest req) {
 
 		req.setAttribute("genreId", id);
 		req.setAttribute("genreName", name);
+		req.setAttribute("typeContent", type);
 
 		return "genrePage";
 	}
