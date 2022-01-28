@@ -29,7 +29,8 @@ public class ContentController {
 		return "contentPage";
 	}
 
-	// prendo il contenuto tramite api
+	
+	// prendo i dati del  contenuto tramite api utilizzando l'id
 	private Contenuto getContenutoFromAPi(String id) {
 		String URL = "https://api.themoviedb.org/3/movie/";
 		String KEY = "?api_key=ad6f11886b4ff2413c3f2b47f875e24a";
