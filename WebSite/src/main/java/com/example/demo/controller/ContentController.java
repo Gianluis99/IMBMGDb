@@ -75,7 +75,7 @@ public class ContentController {
 			arr = obj.getJSONArray("production_companies");
 			String nameP = null;
 			if (arr != null)
-				for (int i = 0; i < 1; i++) {
+				for (int i = 0; i < arr.length(); i++) {
 					nameP = arr.getJSONObject(i).getString("name");
 
 				}
@@ -89,7 +89,7 @@ public class ContentController {
 			JSONArray array = obj.getJSONArray("results");
 			String key_Trailer = null;
 			if (array != null) {
-				for (int i = 0; i < 1; i++) {
+				for (int i = 0; i < array.length(); i++) {
 					key_Trailer = array.getJSONObject(i).getString("key");
 
 				}
