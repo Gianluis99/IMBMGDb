@@ -1,9 +1,6 @@
 package com.example.demo.controller;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,12 +25,9 @@ public class ContentController {
 		req.setAttribute("contentName", contentName);
 
 		req.setAttribute("contentMovie", getContenutoFromAPi(id));
-		Contenuto c = getContenutoFromAPi(id);
+
 		return "contentPage";
 	}
-	
-	
-	
 
 	// prendo il contenuto tramite api
 	private Contenuto getContenutoFromAPi(String id) {
@@ -42,9 +36,14 @@ public class ContentController {
 		String allUrl = URL + id + KEY;
 		String IMG = "https://image.tmdb.org/t/p/w500";
 
-		System.out.println(allUrl);
+		String URL_TRAILER = "/videos?api_key=ad6f11886b4ff2413c3f2b47f875e24a&language=en-US";
+		String youtube_Trailer = "https://www.youtube.com/embed/";
+		String allUrlTrailer = URL + id + URL_TRAILER;
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append(youtube_Trailer);
 
 		Contenuto contenuto = new Contenuto();
+		contenuto.setUrlTrailer(stringBuilder.toString());
 
 		java.net.URL urll;
 		try {
@@ -60,32 +59,52 @@ public class ContentController {
 			contenuto.setTipoContenuto(TipoContenuto.MOVIE);
 			contenuto.setVoto(obj.getDouble("vote_average"));
 			contenuto.setDurata(obj.getInt("runtime"));
-			//System.out.println(obj.getInt("popularity"));
+			// System.out.println(obj.getInt("popularity"));
 
 			JSONArray arr = obj.getJSONArray("genres");
-			ArrayList<String> genres = new ArrayList<String>();
-			for (int i = 0; i < arr.length(); i++) {
-				String genre = arr.getJSONObject(i).getString("name");
-				genres.add(genre);
+			if (arr != null) {
+				ArrayList<String> genres = new ArrayList<String>();
+				for (int i = 0; i < arr.length(); i++) {
+					String genre = arr.getJSONObject(i).getString("name");
+					genres.add(genre);
+				}
+				contenuto.setCategorie(genres);
 			}
-			contenuto.setCategorie(genres);
 
 			arr = obj.getJSONArray("production_companies");
 			String nameP = null;
-			for (int i = 0; i < 1; i++) {
-				nameP = arr.getJSONObject(i).getString("name");
+			if (arr != null)
+				for (int i = 0; i < 1; i++) {
+					nameP = arr.getJSONObject(i).getString("name");
 
-			}
+				}
 			contenuto.setProduttore(nameP);
 
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			urll = new URL(allUrlTrailer);
+			tokener = new JSONTokener(urll.openStream());
+			obj = new JSONObject(tokener);
+
+
+			JSONArray array = obj.getJSONArray("results");
+			String key_Trailer = null;
+			if (array != null) {
+				for (int i = 0; i < 1; i++) {
+					key_Trailer = array.getJSONObject(i).getString("key");
+
+				}
+				stringBuilder.append(key_Trailer);
+			}
+
+			contenuto.setUrlTrailer(stringBuilder.toString());
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		return contenuto;
 
 	}
+	
+	
 
 	@GetMapping("/music_{contentName}")
 	public String handContentMusic(@PathVariable String contentName, HttpServletRequest req) {

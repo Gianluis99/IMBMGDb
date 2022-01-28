@@ -35,26 +35,8 @@
 
 	<header> </header>
 
-	<nav>
-		<ul>
-			<li><a>Home</a></li>
-			<li><a>Movies</a></li>
-			<li><a>Books</a></li>
-			<li><a>Music</a></li>
-			<li><a>Games</a></li>
-
-		</ul>
-
-		<div class="rightContainer">
-			<form>
-				<button type="submit" name="searchButton">Search</button>
-				<input type="text" placeholder="Type something.." name="searchField">
-				<button type="submit" name="loginButton">Login</button>
-			</form>
-		</div>
-	</nav>
-
-
+	
+	
 
 	<div class="contentContainer">
 
@@ -77,7 +59,7 @@
 			<img class="imgMultimedia" id="imgMultimedia"
 				src="${contentMovie.urlImg}">
 			<iframe class="videoMultimedia" id="videoMultimedia"
-				src="https://www.youtube.com/embed/tgbNymZ7vqY"> </iframe>
+				src="${contentMovie.urlTrailer}"> </iframe>
 		</div>
 
 
