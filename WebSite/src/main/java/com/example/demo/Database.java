@@ -31,7 +31,7 @@ public class Database {
 
 	private Database() {
 		try {											//link db creato		nomeUtente postgress    password
-			conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/imdb", "postgres", "postgres");
+			conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "postgres");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
