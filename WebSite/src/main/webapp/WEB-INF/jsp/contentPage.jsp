@@ -11,7 +11,7 @@
 
 <head>
 
-<title>${contentName}</title>
+<title>${contentMovie.titolo} - IMBMGDb</title>
 
 <meta charset="utf-8">
 

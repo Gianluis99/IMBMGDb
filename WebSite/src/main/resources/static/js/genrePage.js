@@ -32,7 +32,7 @@ function getMovieByGenres() {
 
 				$(container).append(`
 				<div class="movie">
-					<a href="movie_`+ item.title + `?id=`+ item.id +`"> <img id="imgMovie" class="img"
+					<a href="movie_`+ item.id +`"> <img id="imgMovie" class="img"
 					src="`+ IMG + item.poster_path + `">
 					</a>
 					
