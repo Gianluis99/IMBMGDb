@@ -11,6 +11,8 @@ public class Contenuto {
 	private String urlImg;
 	private String descrizione;
 	private String urlTrailer;
+	private String urlBackImg;
+
 	private String data;
 	private String produttore;
 	private String sviluppatore;
@@ -113,6 +115,14 @@ public class Contenuto {
 	public void setDurata(int durata) {
 		this.durata = durata;
 	}
+	
+	public String getUrlBackImg() {
+		return urlBackImg;
+	}
+
+	public void setUrlBackImg(String urlBackImg) {
+		this.urlBackImg = urlBackImg;
+	}
 
 	public ArrayList<Recensione> getRecensioni() {
 		return recensioni;
@@ -154,5 +164,7 @@ public class Contenuto {
 		Contenuto other = (Contenuto) obj;
 		return id == other.id;
 	}
+
+	
 
 }

@@ -42,7 +42,7 @@ public class ContentFromAPi {
 			contenuto.setTipoContenuto(TipoContenuto.MOVIE);
 			contenuto.setVoto(obj.getDouble("vote_average"));
 			contenuto.setDurata(obj.getInt("runtime"));
-			// System.out.println(obj.getInt("popularity"));
+			contenuto.setUrlBackImg(IMG +obj.getString("backdrop_path"));
 
 			JSONArray arr = obj.getJSONArray("genres");
 			if (arr != null) {

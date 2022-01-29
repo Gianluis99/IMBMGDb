@@ -11,7 +11,7 @@
 
 <head>
 
-<title>${contentMovie.titolo} - IMBMGDb</title>
+<title>${contentMovie.titolo}- IMBMGDb</title>
 
 <meta charset="utf-8">
 
@@ -35,20 +35,22 @@
 
 	<header> </header>
 
-	
-	
+
+	<div class="titleBox" style="background-image: url('${contentMovie.urlBackImg}');">
+		<h1 id="contentTitle">${contentMovie.titolo}</h1>
+
+	</div>
 
 	<div class="contentContainer">
 
-		<h1 id="contentTitle">${contentMovie.titolo}</h1>
 
 		<div class="infoBox">
-				
+
 			<i class="fas fa-clock"></i>
-			<p class="infoText"> ${contentMovie.durata} min</p>
-			
+			<p class="infoText">${contentMovie.durata} min</p>
+
 			<i class="fas fa-star"></i>
-			<p class="infoText"> ${contentMovie.voto} Imdb</p>
+			<p class="infoText">${contentMovie.voto} Imdb</p>
 
 
 
