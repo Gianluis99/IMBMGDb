@@ -55,6 +55,61 @@
   color: white;
 }
 
+
+
+/*
+star
+*/
+
+
+div.stars {
+    display: inline-block
+}
+
+
+
+input.star {
+    display: none
+}
+
+label.star {
+    float: right;
+    font-size: 30px;
+    color: #02908B;
+    transition: all .2s
+}
+
+/* 4 stelle*/
+input.star:checked~label.star:before {
+    content: '\f005';
+    color: #f2c800;
+    transition: all .25s
+}
+
+/* 5 stelle*/
+input.star-5:checked~label.star:before {
+    color: #ffe111;
+    text-shadow: 0 0 20px #952
+}
+
+/* una stella*/
+input.star-1:checked~label.star:before {
+    color: #F62
+}
+
+label.star:hover {
+	/*aggiungiamo un piccpolo effeto rotazione*/
+    transform: rotate(-15deg) scale(1.3)
+}
+
+/*effetto che hanno le stelle quando non vengono hoverate o cliccate*/
+label.star:before {
+    content: '\f006';
+    font-family: FontAwesome
+}
+
+
+
 /* Individual bars */
 .bar-5 {width: 60%; height: 18px; background-color: #04AA6D;}
 .bar-4 {width: 30%; height: 18px; background-color: #2196F3;}

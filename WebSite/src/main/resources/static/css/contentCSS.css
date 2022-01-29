@@ -81,8 +81,7 @@ h1 {
 	color: rgb(255, 255, 255);
 	border-left: none;
 	font: bold 60px Georgia, serif;
-  text-shadow: 2px 2px 4px #000000;
-	
+	text-shadow: 2px 2px 4px #000000;
 }
 
 .multimediaContainer {
@@ -133,7 +132,7 @@ h1 {
 	padding-left: 1%;
 	display: flex;
 	margin-top: 2%;
-	box-shadow: 1px 1px 1px 1px #001624;
+	box-shadow: 2px 2px 3px 3px #001624;
 }
 
 .infoText {
@@ -156,6 +155,11 @@ i {
 	margin-top: 4px;
 	margin-right: 3px;
 	font-size: 25px;
+}
+
+.blockDiv {
+	margin-top: 1%;
+	margin-bottom: 3%;
 }
 
 @media screen and (max-width: 1200px) {
