@@ -44,12 +44,11 @@ public class RecensioneDaoJDBC implements RecensioneDao {
 			// UPDATE se recensione esiste 
 			try {
 				String query = "update recensione " 
-						+ "set titolo = ?, testo = ?, voto = ? " + "where id = ?";
+						+ "testo = ?, voto = ? " + "where id = ?";
 				PreparedStatement st = conn.prepareStatement(query);
-				st.setString(1, recensione.getTitolo());
-				st.setString(2, recensione.getTesto());
-				st.setInt(3, recensione.getVoto());
-				st.setLong(4, recensione.getId());
+				st.setString(1, recensione.getTesto());
+				st.setInt(2, recensione.getVoto());
+				st.setLong(3, recensione.getId());
 
 				int res = 0;
 				res = st.executeUpdate();

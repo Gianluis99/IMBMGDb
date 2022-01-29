@@ -18,6 +18,7 @@ public class ContentFromAPi {
 		String KEY = "?api_key=ad6f11886b4ff2413c3f2b47f875e24a";
 		String allUrl = URL + id + KEY;
 		String IMG = "https://image.tmdb.org/t/p/w500";
+		String IMG_BACK = "https://image.tmdb.org/t/p/w1280";
 
 		String URL_TRAILER = "/videos?api_key=ad6f11886b4ff2413c3f2b47f875e24a&language=en-US";
 		String youtube_Trailer = "https://www.youtube.com/embed/";
@@ -42,7 +43,7 @@ public class ContentFromAPi {
 			contenuto.setTipoContenuto(TipoContenuto.MOVIE);
 			contenuto.setVoto(obj.getDouble("vote_average"));
 			contenuto.setDurata(obj.getInt("runtime"));
-			contenuto.setUrlBackImg(IMG +obj.getString("backdrop_path"));
+			contenuto.setUrlBackImg(IMG_BACK +obj.getString("backdrop_path"));
 
 			JSONArray arr = obj.getJSONArray("genres");
 			if (arr != null) {

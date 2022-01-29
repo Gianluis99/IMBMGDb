@@ -4,9 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
-import com.imbmgdb.model.Categoria;
+
 import com.imbmgdb.model.Contenuto;
 import com.imbmgdb.persistenza.dao.ContenutoDao;
 
@@ -76,54 +75,6 @@ public class ContenutoDaoJDBC implements ContenutoDao {
 		return contenuto;
 	}
 
-	//TODO PROXY RECENSIONI e CATEGORIE
-	@Override
-	public Contenuto findByName(String name) {
-		Contenuto contenuto = null;
-
-		String query = "select * from contenuto where titolo = ?";
-
-		try {
-			PreparedStatement st = con.prepareStatement(query);
-			st.setString(1, name);
-
-			ResultSet res = st.executeQuery();
-			if (res.next()) {
-				contenuto = new Contenuto();
-				contenuto.setId(res.getLong("id"));
-				contenuto.setTitolo(res.getString("titolo"));
-				contenuto.setDescrizione(res.getString("descrizione"));
-				contenuto.setData(res.getString("data"));
-				contenuto.setProduttore(res.getString("produttore"));
-				contenuto.setUrlImg(res.getString("url_img"));
-				contenuto.setUrlTrailer(res.getString("url_trailer"));
-				contenuto.setSviluppatore(res.getString("sviluppatore"));
-				contenuto.setTipoContenuto(res.getInt("tipologia_contenuto"));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-		return contenuto;
-	}
-
-	@Override
-	public void delete(Contenuto c) {
-
-	}
-
-	//dato la categoria e il tipo contenuto restituisce tutti i contenuti
-	@Override
-	public ArrayList<Contenuto> findAllContenutiByCategoria(Categoria c, int tipoContenuto) {
-
-		return null;
-	}
-
 	
-
-	@Override
-	public ArrayList<Contenuto> findAllBySearch(String value) {
-		return null;
-	}
 
 }

@@ -37,7 +37,7 @@ function getMovieByGenres() {
 					</a>
 					
 					<div class="down">
-						<a href="movie_`+ item.title + `?id=`+ item.id +`" class="title">` + item.title + `</a>
+						<a href="movie_`+ item.id +`" class="title">` + item.title + `</a>
 						<div class="divVoti">
 						<img class="iconStar" src="immagini/starIcon.png">
 						<p class="voti">`+ item.vote_average + ` Imdb</p>
