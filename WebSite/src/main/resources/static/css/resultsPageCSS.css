@@ -1,0 +1,30 @@
+.resultsFor { 
+	margin-left: 26px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: 26px;
+    margin-right: 26px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/*
+tr:hover {background-color: #B4FBF8;}
+*/
+
+.view {
+	background-color: #02908B;
+	color: #002134;
+	border-radius: 5px;
+}
+
+.view:hover {
+	color: #002134;
+	background-color: #B4FBF8;
+}

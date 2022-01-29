@@ -115,3 +115,60 @@ a:hover {
 }
 
 .dropdown:hover .dropdown-content { display: block; }
+
+
+/*========================================================*/
+
+/*
+.dropdownFilter {
+	white-space: nowrap;
+    overflow: hidden;
+	text-overflow: ellipsis; 
+	width: 160px;
+	padding: 24px 26px;
+	float: left;
+	display: block;
+	text-align: center;
+	border-bottom: 3px solid transparent;
+	text-decoration: none;
+	background-color: #02908b;
+	color: #002134;
+	
+	margin-top: 8px;
+	
+ 	border: none;
+ 	height: 60px;
+ 	width: 150px;
+ 	background-color: #02908B;
+ 	color: #002134;
+}
+			
+.dropdown-option {
+	position: absolute;
+	display: none;
+	background-color: #02908B;
+	min-width: 160px;
+	margin-top: 26px;
+	margin-left: -26px;
+	text-align: center;
+	color: #002134;
+	
+	z-index: 1;
+}
+
+.dropdownFilter:hover {
+	color: #B4FBF8;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.option {
+	 padding: 24px, 26px;
+	 width: 160px;
+	 text-decoration: none;
+	 display: block;
+	 color: #002134;
+	 text-align: center;
+}
+
+.dropdownFilter:hover .dropdown-option { display: block; }
+*/
