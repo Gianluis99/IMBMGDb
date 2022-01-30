@@ -16,8 +16,10 @@ public class Recensione {
 	private String nomeUtente;
 
 	
-	public Recensione() {
-		
+	public Recensione( String nomeUtente,String testo, int voto) {
+		this.testo = testo;
+		this.voto = voto;
+		this.nomeUtente = nomeUtente;
 	}
 	
 	public Recensione(Long id, String titolo,String testo, int voto, String nomeUtente) {

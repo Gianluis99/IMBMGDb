@@ -10,5 +10,13 @@ function Utente(username, tipo, abilitato) {
 }
 
 
+function Recensione(username, text, voto){
+	this.username=username;
+
+	this.text=text;
+	this.voto=voto;
+
+}
+
 
 

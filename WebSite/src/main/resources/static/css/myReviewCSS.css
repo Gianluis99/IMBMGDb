@@ -1,9 +1,13 @@
 .myReviewBox {
 	background-color: #002134;
 	box-shadow: 3px 5px 10px 10px #001624;
-	padding: 2%;
+
+	padding-left:30px;
+	padding-right:30px;
+	padding-bottom:10px;
 	margin: 20px;
 	border-radius: 5px;
+	margin-bottom:9%;
 }
 
 .reviewBox {
@@ -19,10 +23,14 @@
 }
 
 .usernameReview {
-	font-size: 20px;
+	font-size: 20px !important;
+	font-style: italic;
+	display:flex;
+}
+.usernameReview p{
+	font-size: 20px !important;
 	font-style: italic;
 }
-
 .myReviewBoxTextArea {
 	resize: none;
 }
