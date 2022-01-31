@@ -10,11 +10,12 @@ function Utente(username, tipo, abilitato) {
 }
 
 
-function Recensione(username, text, voto){
-	this.username=username;
+function Recensione(nomeUtente, testo, voto,idContenuto){
+	this.nomeUtente=nomeUtente;
 
-	this.text=text;
+	this.testo=testo;
 	this.voto=voto;
+	this.idContenuto=idContenuto;
 
 }
 

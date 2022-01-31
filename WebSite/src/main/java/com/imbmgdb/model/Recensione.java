@@ -15,20 +15,16 @@ public class Recensione {
 	private Long idContenuto;
 	private String nomeUtente;
 
+	public Recensione() {}
 	
-	public Recensione( String nomeUtente,String testo, int voto) {
+	public Recensione( String nomeUtente,String testo, int voto,Long idContenuto) {
 		this.testo = testo;
 		this.voto = voto;
 		this.nomeUtente = nomeUtente;
+		this.idContenuto=idContenuto;
 	}
 	
-	public Recensione(Long id, String titolo,String testo, int voto, String nomeUtente) {
-		super();
-		this.id = id;
-		this.testo = testo;
-		this.voto = voto;
-		this.nomeUtente = nomeUtente;
-	}
+	
 
 	public Long getId() {
 		return id;

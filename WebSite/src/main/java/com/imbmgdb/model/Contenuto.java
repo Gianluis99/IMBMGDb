@@ -1,6 +1,7 @@
 package com.imbmgdb.model;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Contenuto {
@@ -128,8 +129,8 @@ public class Contenuto {
 		return recensioni;
 	}
 
-	public void setRecensioni(ArrayList<Recensione> recensioni) {
-		this.recensioni = recensioni;
+	public void setRecensioni(List<Recensione> list) {
+		this.recensioni = (ArrayList<Recensione>) list;
 	}
 
 	public ArrayList<String> getCategorie() {

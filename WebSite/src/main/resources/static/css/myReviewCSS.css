@@ -1,13 +1,12 @@
 .myReviewBox {
 	background-color: #002134;
 	box-shadow: 3px 5px 10px 10px #001624;
-
-	padding-left:30px;
-	padding-right:30px;
-	padding-bottom:10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 10px;
 	margin: 20px;
 	border-radius: 5px;
-	margin-bottom:9%;
+	margin-bottom: 9%;
 }
 
 .reviewBox {
@@ -18,19 +17,29 @@
 	border-radius: 5px;
 }
 
+.myReviewAllBox {
+	padding: 20px;
+	margin: 20px;
+}
+
 .textReview {
 	margin-top: 2%;
+	overflow: hidden;
+	  word-wrap: break-word;
+	
 }
 
 .usernameReview {
 	font-size: 20px !important;
 	font-style: italic;
-	display:flex;
+	display: flex;
 }
-.usernameReview p{
+
+.usernameReview p {
 	font-size: 20px !important;
 	font-style: italic;
 }
+
 .myReviewBoxTextArea {
 	resize: none;
 }
