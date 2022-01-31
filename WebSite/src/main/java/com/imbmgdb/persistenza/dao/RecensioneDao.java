@@ -15,6 +15,11 @@ public interface RecensioneDao {
 	
 	//inserisce o aggiorna una recensione
 	public boolean saveOrUpdate(Recensione r);
+	
+	public Recensione findByUsername(Long contentId,String username);
+
+	
+	//elimina recensione
 	public void delete(Recensione r );
 	
 }

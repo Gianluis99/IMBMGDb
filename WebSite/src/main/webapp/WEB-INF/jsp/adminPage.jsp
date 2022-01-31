@@ -56,8 +56,8 @@
 
 
 
-<script language="javascript" src="../js/adminPageSuggestions.js"></script>
-<script language="javascript" src="../js/modelloDati.js"></script>
+<script src="../js/adminPageSuggestions.js"></script>
+<script src="../js/modelloDati.js"></script>
 
 
 

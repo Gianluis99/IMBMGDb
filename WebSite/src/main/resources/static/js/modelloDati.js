@@ -45,5 +45,14 @@ function Movie(id, title, year, plot){
 }
 
 
+function Recensione(nomeUtente, testo, voto,idContenuto){
+	this.nomeUtente=nomeUtente;
+
+	this.testo=testo;
+	this.voto=voto;
+	this.idContenuto=idContenuto;
+
+}
+
 
 
