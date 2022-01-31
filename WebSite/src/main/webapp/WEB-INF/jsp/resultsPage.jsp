@@ -11,7 +11,6 @@
 	
 	    <link rel="stylesheet" href="/css/commonCSS.css">
 	    <link rel="stylesheet" href="/css/resultsPageCSS.css">
-	    
 	      
 	    <script type='text/javascript' src="/js/modelloDati.js"></script>
 	    <script type='text/javascript' src="/js/resultsHandler.js"></script>
@@ -35,16 +34,19 @@
 	                <th></th>
 	            </tr>
 	        </thead>
-	        <tbody>
-	        
-	        </tbody>
+	        <tbody> </tbody>
        	</table>
             
 	</body>
 	
 	<script>
-	    var serverData = "${text}";
-		function myFunction() { loadResults(serverData); }
+	    var title = "${title}";
+	    var content = "${content}";
+	    var release = "${release}";
+	    var rating = "${rating}";
+	    var startDate = "${startDate}";
+	    var endDate = "${endDate}";
+		function myFunction() { loadResults(title, content, release, rating, startDate, endDate); }
 	</script>
 
 </html>

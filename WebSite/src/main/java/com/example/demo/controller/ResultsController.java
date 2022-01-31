@@ -11,9 +11,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class ResultsController {
 	
 	@PostMapping("/resultsPage")
-	public String resultsPage(HttpServletRequest req, HttpServletResponse res, String searchField) {
+	public String resultsPage(HttpServletRequest req, HttpServletResponse res) {
 		HttpSession session = req.getSession(true);
-        session.setAttribute("text", searchField);
+		
+		String title = req.getParameter("searchField");
+		String rating  =  req.getParameter("rating");
+		String content  =  req.getParameter("content");
+		String release  =  req.getParameter("release");
+		String startDate  =  req.getParameter("startDate");
+		String endDate  =  req.getParameter("endDate");
+		
+		if(title != null && rating != null && content != null && release != null) {
+	        session.setAttribute("title", title);
+	        session.setAttribute("content", content);
+	        session.setAttribute("release", release);
+	        session.setAttribute("rating", rating);
+	        session.setAttribute("startDate", startDate);
+	        session.setAttribute("endDate", endDate);
+		}
+        
 		return "resultsPage";
 	}
 	

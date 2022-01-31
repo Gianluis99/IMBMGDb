@@ -1,0 +1,56 @@
+.date {
+	font-size: 20px;
+	margin-left: -25px;
+	width: 160px;
+	padding: 0px;
+}
+
+label {
+	color: #002134;
+}
+
+.dropdownFilter {
+	width: 160px;
+	padding: 24px 26px;
+	float: right;
+	text-align: center;
+	border-bottom: 3px solid transparent;
+	text-decoration: none;
+	border-radius: 10px 10px 10px 10px;
+	background-color: #02908b;
+	color: #002134;
+	margin-left: 10px;
+}
+
+.dropdown-option {
+	position: absolute;
+	display: none;
+	background-color: #02908B;
+	min-width: 160px;
+	margin-top: 26px;
+	margin-left: -506px;
+	text-align: center;
+	color: #002134;
+	border-radius: 0px 0px 0px 0px;
+	z-index: 1;
+}
+
+
+.dropdownFilter:hover {
+	color: #B4FBF8;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.option{
+	padding: 24px, 26px;
+	width: 160px;
+	text-decoration: none;
+	display: block;
+	color: #002134;
+	text-align: center;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.dropdownFilter:hover .dropdown-option { display: block; }
+
+

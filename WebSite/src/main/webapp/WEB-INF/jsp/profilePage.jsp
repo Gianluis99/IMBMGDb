@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %> 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,25 +13,17 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
-	<nav>
-		<ul>
-      		<li><a>Home</a></li>
-      		<li><a>Movies</a></li>
-     		<li><a>Book</a></li>
-     		<li><a>Music</a></li>
-     		<li><a>Games</a></li>
-    	</ul>
-    	<div class = "rightContainer">
-	    	<form>
-	    		<button type="submit" name = "searchButton"> Search </button>
-	      		<input type="text" placeholder="Type something.." name="searchField">
-	      		<button type="submit" name = "loginButton"> Login </button>
-	   		</form> 
-    	</div>
-	</nav>
 		
+	<%@ include file="navBar.jsp" %>
+	
+	<br></br>
 	Il mio profilo
+	
+	<br></br>
+	<br></br>
+	<a class = "button" href = "listPage">List Section</a>
+	<br></br>
+	<br></br>
 	
 	<br/>
 	<br/>
@@ -156,7 +151,7 @@
 		<div class="reviewTextArea">
 			<div class="row">
 			  <div class="col-75">
-			    <textarea readonly class="reviewBoxTextArea" style="height:200px">Guà, più o meno ci siamo... si poteva fare di più, quello sicuro... però, cioè... ci sta eh, però boh... Vabbè che lasciamo perdere... sennò ci stiamo troppo... Però boh, vabbè... lasciamo perdere. E' ok.</textarea>
+			    <textarea readonly class="reviewBoxTextArea" style="height:200px">GuÃ , piÃ¹ o meno ci siamo... si poteva fare di piÃ¹, quello sicuro... perÃ², cioÃ¨... ci sta eh, perÃ² boh... VabbÃ¨ che lasciamo perdere... sennÃ² ci stiamo troppo... PerÃ² boh, vabbÃ¨... lasciamo perdere. E' ok.</textarea>
 			  </div>
 			</div>
 		</div>
@@ -179,8 +174,6 @@
 		</div>
 	</div>
 	
-	
-
 	
 </body>
 </html>

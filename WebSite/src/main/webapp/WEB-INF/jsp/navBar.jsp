@@ -21,7 +21,7 @@
 				<div class="dropdown">
 					${username}
 					<div class="dropdown-content">
-						<a class="item left" href="listPage"> MyArea </a> 
+						<a class="item left" href="myAreaPage"> MyArea </a> 
 						
 						<c:if test="${tipo == 1}">
 							<a class="item right" href="adminPage">Admin</a>
@@ -37,7 +37,7 @@
 			</c:if>
 			
 			<c:if test="${username == null}">
-				<a href="loginPage">Login</a>
+				<a href="loginPage"> Login </a>
 			</c:if>
 	
 			<a href="/">Home</a> <a>Movie</a> <a>Game</a> <a>Book</a> <a>Music</a>
@@ -45,15 +45,8 @@
 			<div class="search-container">
 				<form method = "POST" action = "/resultsPage">
 					<input type="text" placeholder="Search.." name = "searchField">
+					<%@ include file="dropdownFilter.jsp" %>
 					<button type="submit"> Search </button>
-					<!--  
-					<div class = "dropdownFilter">
-						More
-						<div class = "dropdown-option">
-							<a class="option" > Logout </a>
-						</div>
-					</div>
-					-->
 				</form>
 			</div>
 				

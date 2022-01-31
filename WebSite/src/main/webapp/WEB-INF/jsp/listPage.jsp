@@ -11,55 +11,40 @@
 	
 	    <meta charset="utf-8">
 	    
-	    <link rel="stylesheet" href="css/commonCSS.css">
-	    <link rel="stylesheet" href="css/navBarCSS.css">
-	    <link rel="stylesheet" href="css/contentCSS.css"> 
-	    <!--  
 	    <link rel="stylesheet" href="css/splittedPageCSS.css">
 	    <link rel="stylesheet" href="css/listBoxCSS.css">
-	    -->
+	    
 	    
 	</head>
 	
 	<body>
-	
-		<header>
-		</header>
-				
-			<%@ include file="navBar.jsp" %>
-		    
-		    <!--  
-			<div class="split left">
-			    <h2>Le mie liste</h2>
-			    <br>
-			    
-				<ul>
-					<li><button>Add</button></li>
-					<li><button>Edit</button></li>
-					<li><button>Remove</button></li>
-				</ul>
-
-			    <div class="listBox">Lista1
-			    </div>
-			    <div class="listBox">Lista2
-			    </div>
-			    <div class="listBox">Lista3
-			    </div>
-			</div>
+		
+		<%@ include file="navBar.jsp" %>
+		 
+		<div class="split">
 			
-			<div class="split right">
-			    <h2>Dentro la lista:</h2>
-			    <br>
-			    <div>
-			    <img src="../locandina.jpg" class="widthSet">
-			    Immaginatevi la lista contenuti della lista selezionata, avete sovrascritto ul e li li mortacci vostra
-			    </div>
-			    </div>
-		
-		-->
-		
-		<h1>jjjjjj</h1>
-		
+			<br></br>
+			<h2 class = "text">Le mie liste</h2>
+			
+			<!--  		    
+			<ul class = "buttonsContainer">
+				<li><button>Add</button></li>
+				<li><button>Edit</button></li>
+				<li><button>Remove</button></li>
+			</ul>
+			-->
+					  
+			<ul class="listsContainer">
+				 <li class = "listBox"> Lista 6 </li>
+				 <li class = "listBox"> Lista 6 </li>
+				 
+			</ul>
+		</div>
+			
+			
+		<div class="split">
+			    
+		</div>
 		
 	</body>
 		
