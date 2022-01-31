@@ -2,16 +2,26 @@
 .split {
   height: 100%;
   width: 50%;
-  position: fixed;
+  
+  /*
   z-index: 1;
+  
   overflow-x: hidden;
+  
   padding-top: 20px;
+  */
+}
+
+.text {
+	margin-left: 25px;
 }
 
 /* Control the left side */
 .left {
   left: 0;
-  background-color:  #002134;;
+  /*
+  background-color:  #002134;
+  */
 }
 
 /* Control the right side */

@@ -43,3 +43,17 @@ nav input[type=text] {
   	margin-right: 50px;
   	margin-left: 10px;
 }
+
+.button {
+	padding: 0px 0px 0px 0px;
+ 	border: none;
+ 	height: 50px;
+ 	width: 150px;
+ 	background-color: #02908B;
+ 	color: #002134;
+ 	border-radius: 5px;
+}
+
+.button:hover {
+  	background-color: #B4FBF8;
+}
