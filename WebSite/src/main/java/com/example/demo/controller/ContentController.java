@@ -31,7 +31,7 @@ public class ContentController {
 		HttpSession session = req.getSession(false);
 
 		Recensione rece = null;
-		if (session != null) {
+		if (session.getAttribute("username") != null) {
 			String username = session.getAttribute("username").toString();
 			 rece = Database.getInstance().getRecensioneDao().findByUsername(idL, username);
 		}

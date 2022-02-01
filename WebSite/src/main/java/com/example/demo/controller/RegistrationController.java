@@ -68,7 +68,7 @@ public class RegistrationController {
 			return risposta;
 		}
 		else {
-			risposta="home";
+			risposta="homePage";
 		}
 			 
 		
