@@ -9,7 +9,10 @@ function doReview() {
 	var username = document.querySelector("#usernameReview");
 	var boxMyReview = document.querySelector("#myReviewBox");
 	var boxMyAllReview = document.querySelector("#myReviewAllBox");
+	var numReview=document.querySelector("#numReview");
 
+	console.log(numReview.innerHTML);
+	
 	btn.addEventListener("click", function() {
 		var radios = document.querySelectorAll('input[type="radio"]:checked');
 		var text = document.querySelector("#myReviewBoxTextArea");
@@ -77,9 +80,10 @@ function doReview() {
 			data: JSON.stringify(recensione),
 			success: function(risposta) {
 				//status = 200
-				console.log(risposta);
+				$('#numReview').html(parseInt($('#numReview').html(), 10)+1)
+				
 				boxMyReview.style.display = "none";
-
+				
 			if(vote==1){
 				$(boxMyAllReview).append(`
 				<div class="reviewBox">

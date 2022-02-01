@@ -113,7 +113,7 @@
 	<div class="reviewsBox">
 		<hr style="border: 1px solid #f1f1f1">
 
-		<span> ${numReview} - Reviews <i class="fas fa-users"></i></span>
+		<span> <span id="numReview">${numReview}</span> - Reviews <i class="fas fa-users"></i></span>
 
 
 		<div id="myReviewAllBox">
