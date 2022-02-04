@@ -15,8 +15,18 @@
 	padding: 20px;
 	margin: 20px;
 	border-radius: 5px;
+	position: relative;
 }
 
+#deleteReviewBtn {
+	position: absolute;
+	right: 5px;
+	color: tomato;
+}
+#deleteReviewBtn:hover {
+	cursor:hand;
+	color: #ff2c06;
+}
 .myReviewAllBox {
 	padding: 20px;
 	margin: 20px;
@@ -25,8 +35,7 @@
 .textReview {
 	margin-top: 2%;
 	overflow: hidden;
-	  word-wrap: break-word;
-	
+	word-wrap: break-word;
 }
 
 .usernameReview {
@@ -85,11 +94,7 @@ input[type=submit]:hover {
 	background-color: #45a049;
 }
 
-.container {
-	border-radius: 5px;
-	background-color: #f2f2f2;
-	padding: 20px;
-}
+
 
 .col-25 {
 	float: left;

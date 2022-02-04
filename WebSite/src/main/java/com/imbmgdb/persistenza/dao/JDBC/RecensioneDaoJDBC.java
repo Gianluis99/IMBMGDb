@@ -19,7 +19,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
 	}
 
 	@Override
-	public boolean saveOrUpdate(Recensione recensione) {
+	public long saveOrUpdate(Recensione recensione) {
 		if (recensione.getId() == 0) {// se la recensione non esiste viene fatto l'insert
 			// INSERT
 			try {
@@ -33,12 +33,11 @@ public class RecensioneDaoJDBC implements RecensioneDao {
 				st.setString(5, recensione.getNomeUtente());
 				st.setLong(6, recensione.getIdContenuto());
 
-				int res = 0;
-				res = st.executeUpdate();
-				return res == 1;
+				st.executeUpdate();
+				return  recensione.getId();
 			} catch (SQLException e) {
 				e.printStackTrace();
-				return false;
+				return 0;
 			}
 		} else {
 			// UPDATE se recensione esiste
@@ -49,14 +48,13 @@ public class RecensioneDaoJDBC implements RecensioneDao {
 				st.setInt(2, recensione.getVoto());
 				st.setLong(3, recensione.getId());
 
-				int res = 0;
-				res = st.executeUpdate();
-				return res == 1;
+				st.executeUpdate();
+				return recensione.getId();
 
 			} catch (SQLException e) {
 
 				e.printStackTrace();
-				return false;
+				return 0;
 			}
 		}
 	}
@@ -77,6 +75,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
 				recensione.setVoto(res.getInt("voto"));
 				recensione.setNomeUtente(res.getString("nome_utente"));
 				recensione.setIdContenuto(res.getLong("id_contenuto"));
+				recensione.setId(res.getLong("id"));
 				reviews.add(recensione);
 
 			}
@@ -93,10 +92,25 @@ public class RecensioneDaoJDBC implements RecensioneDao {
 	}
 
 	@Override
-	public void delete(Recensione r) {
+	public boolean delete(Long id) {
+		String query="DELETE FROM recensione WHERE id=?";
+		
+		try {
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setLong(1, id);
 
+			st.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+
+		}
+		
 	}
 
+	
+	
 	@Override
 	public Recensione findByUsername(Long contentId, String username) {
 		Recensione recensione = null;

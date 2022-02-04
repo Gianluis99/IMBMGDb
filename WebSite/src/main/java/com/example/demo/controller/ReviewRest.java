@@ -19,14 +19,28 @@ public class ReviewRest {
 
 		recensione.setId((long) 0);
 		recensione.setTitolo("title"+recensione.getIdContenuto());
-		if (Database.getInstance().getRecensioneDao().saveOrUpdate(recensione))
+		long id=Database.getInstance().getRecensioneDao().saveOrUpdate(recensione);
+			return Long.toString(id);
+		
+		
+		
+
+	}
+	
+	
+
+	@PostMapping("/deleteReview")
+	public String deleteReview(@RequestBody long id, HttpServletResponse resp, HttpServletRequest req) {
+
+		
+		
+		if (Database.getInstance().getRecensioneDao().delete(id))
 			return Messages.SUCCESS;
 		else {
 			return Messages.ERROR;
 		}
 		
 		
-
 	}
 
 }

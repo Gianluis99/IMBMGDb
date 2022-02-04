@@ -1,7 +1,12 @@
 window.addEventListener("load", function() {
 	doReview();
 
+
 });
+
+
+
+
 
 
 function doReview() {
@@ -9,10 +14,10 @@ function doReview() {
 	var username = document.querySelector("#usernameReview");
 	var boxMyReview = document.querySelector("#myReviewBox");
 	var boxMyAllReview = document.querySelector("#myReviewAllBox");
-	var numReview=document.querySelector("#numReview");
-
+	var numReview = document.querySelector("#numReview");
+	var idReview;
 	console.log(numReview.innerHTML);
-	
+
 	btn.addEventListener("click", function() {
 		var radios = document.querySelectorAll('input[type="radio"]:checked');
 		var text = document.querySelector("#myReviewBoxTextArea");
@@ -79,14 +84,16 @@ function doReview() {
 			contentType: "application/json",
 			data: JSON.stringify(recensione),
 			success: function(risposta) {
-				//status = 200
-				$('#numReview').html(parseInt($('#numReview').html(), 10)+1)
-				
+				console.log(risposta);
+				idReview = Number(risposta);
+				$('#numReview').html(parseInt($('#numReview').html(), 10) + 1)
+
 				boxMyReview.style.display = "none";
-				
-			if(vote==1){
-				$(boxMyAllReview).append(`
-				<div class="reviewBox">
+
+				if (vote == 1) {
+					$(boxMyAllReview).append(`
+				<div id="reviewBox_`+ idReview +`" class="reviewBox">
+					<i title="delete this review" id="deleteReviewBtn" class="fas fa-trash" onclick="deleteReview(`+ idReview + `,true)" ></i>
 					<span class="fa fa-star checked"></span> 
 					<span class="fa fa-star "></span> 
 					<span class="fa fa-star "></span>
@@ -94,18 +101,20 @@ function doReview() {
 					<span class="fa fa-star "></span>
 		
 					<div class="usernameReview">
-						<i class="fas fa-user fa-sm"></i> `+user+`
+						<i class="fas fa-user fa-sm"></i> `+ user + `
 					</div>
-					<p class="textReview">`+textReview+`</p>
+					<p class="textReview">`+ textReview + `</p>
 				</div>
 
 				`)
 
-			}
-			
-				else if(vote==2){
-				$(boxMyAllReview).append(`
-				<div class="reviewBox">
+				}
+
+				else if (vote == 2) {
+					$(boxMyAllReview).append(`
+				<div id="reviewBox_`+ idReview +`"  class="reviewBox">
+					<i title="delete this review" id="deleteReviewBtn" class="fas fa-trash" onclick="deleteReview(`+ idReview + `,true)" ></i>
+
 					<span class="fa fa-star checked"></span> 
 					<span class="fa fa-star checked"></span> 
 					<span class="fa fa-star "></span>
@@ -113,19 +122,21 @@ function doReview() {
 					<span class="fa fa-star "></span>
 		
 					<div class="usernameReview">
-						<i class="fas fa-user fa-sm"></i> `+user+`
+						<i class="fas fa-user fa-sm"></i> `+ user + `
 					</div>
-					<p class="textReview">`+textReview+`</p>
+					<p class="textReview">`+ textReview + `</p>
 				</div>
 
 				`)
 
-			}
-			
-			
-				else if(vote==3){
-				$(boxMyAllReview).append(`
-				<div class="reviewBox">
+				}
+
+
+				else if (vote == 3) {
+					$(boxMyAllReview).append(`
+				<div id="reviewBox_`+ idReview +`" class="reviewBox">
+					<i title="delete this review" id="deleteReviewBtn" class="fas fa-trash" onclick="deleteReview(`+ idReview + `,true)" ></i>
+
 					<span class="fa fa-star checked"></span> 
 					<span class="fa fa-star checked"></span> 
 					<span class="fa fa-star checked"></span>
@@ -133,19 +144,21 @@ function doReview() {
 					<span class="fa fa-star "></span>
 		
 					<div class="usernameReview">
-						<i class="fas fa-user fa-sm"></i> `+user+`
+						<i class="fas fa-user fa-sm"></i> `+ user + `
 					</div>
-					<p class="textReview">`+textReview+`</p>
+					<p class="textReview">`+ textReview + `</p>
 				</div>
 
 				`)
 
-			}
-			
-			
-				else if(vote==4){
-				$(boxMyAllReview).append(`
-				<div class="reviewBox">
+				}
+
+
+				else if (vote == 4) {
+					$(boxMyAllReview).append(`
+				<div id="reviewBox_`+ idReview +`" class="reviewBox">
+					<i title="delete this review" id="deleteReviewBtn" class="fas fa-trash" onclick="deleteReview(`+ idReview + `,true)" ></i>
+
 					<span class="fa fa-star checked"></span> 
 					<span class="fa fa-star checked"></span> 
 					<span class="fa fa-star checked"></span>
@@ -153,19 +166,21 @@ function doReview() {
 					<span class="fa fa-star "></span>
 		
 					<div class="usernameReview">
-						<i class="fas fa-user fa-sm"></i> `+user+`
+						<i class="fas fa-user fa-sm"></i> `+ user + `
 					</div>
-					<p class="textReview">`+textReview+`</p>
+					<p class="textReview">`+ textReview + `</p>
 				</div>
 
 				`)
 
-			}
-			
-			
-				else if(vote==5){
-				$(boxMyAllReview).append(`
-				<div class="reviewBox">
+				}
+
+
+				else if (vote == 5) {
+					$(boxMyAllReview).append(`
+				<div id="reviewBox_`+idReview+`" class="reviewBox">
+				   <i title="delete this review" id="deleteReviewBtn" class="fas fa-trash" onclick="deleteReview(`+ idReview + `,true)" ></i>
+
 					<span class="fa fa-star checked"></span> 
 					<span class="fa fa-star checked"></span> 
 					<span class="fa fa-star checked"></span>
@@ -173,14 +188,14 @@ function doReview() {
 					<span class="fa fa-star checked"></span>
 		
 					<div class="usernameReview">
-						<i class="fas fa-user fa-sm"></i> `+user+`
+						<i class="fas fa-user fa-sm"></i> `+ user + `
 					</div>
-					<p class="textReview">`+textReview+`</p>
+					<p class="textReview">`+ textReview + `</p>
 				</div>
 
 				`)
 
-			}
+				}
 
 			}
 		});
@@ -189,3 +204,58 @@ function doReview() {
 	});
 
 }
+
+
+
+
+function deleteReview(id,mia) {
+
+	var box = document.querySelector("#reviewBox_" + id);
+	
+
+	$.confirm({
+		title: 'Confirm!',
+		content: "Are you sure to delete this review?",
+		buttons: {
+			confirm: function() {
+
+				$.ajax({
+					type: "POST",
+					url: "/deleteReview",
+					contentType: "application/json",
+					data: JSON.stringify(id),
+					success: function(risposta) {
+						console.log(risposta);
+						$('#numReview').html(parseInt($('#numReview').html(), 10) - 1)
+						$(box).remove();
+						if(mia){
+							location.reload();
+						}
+
+					},
+					error: function(xhr) {
+						//Se si verifica un errore si vedrà solamente il mesaggio
+
+					}
+
+				});
+
+
+			},
+			cancel: function() {
+			}
+		}
+	});
+
+
+
+
+
+}
+
+
+
+
+
+
+

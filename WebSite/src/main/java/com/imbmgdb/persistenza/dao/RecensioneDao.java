@@ -14,12 +14,12 @@ public interface RecensioneDao {
 	public Recensione findByPrimaryKey(Long id);
 	
 	//inserisce o aggiorna una recensione
-	public boolean saveOrUpdate(Recensione r);
+	public long saveOrUpdate(Recensione r);
 	
 	public Recensione findByUsername(Long contentId,String username);
 
 	
 	//elimina recensione
-	public void delete(Recensione r );
+	public boolean delete(Long  id );
 	
 }
