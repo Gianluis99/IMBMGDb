@@ -61,10 +61,12 @@ h2 {
 	width: 200px;
 	height: 60%;
 	cursor: hand;
+		box-shadow: 2px 2px 3px 3px #001624;
+	
 }
 
 .down {
-	background-color: #1b1b1b;
+	background-color: #00111c;
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;
 	width: 100%;
@@ -72,6 +74,8 @@ h2 {
 	position: relative;
 	padding-left: 10px;
 	padding-right: 10px;
+	box-shadow: 2px 2px 3px 3px #001624;
+	
 }
 
 .title {

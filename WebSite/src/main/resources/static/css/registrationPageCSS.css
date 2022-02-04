@@ -26,13 +26,13 @@ html body {
 
 .formContainer {
 	width: 100%;
+	height:auto;
 	justify-content: center;
 	display: flex;
 	margin-bottom: 5%;
 }
 
 .infoContainer {
-	min-width:60%;
 	height:auto;
 	font-size: 90%;
 	position: relative;
@@ -41,8 +41,9 @@ html body {
 	border-radius: 5px;
 	padding-top: 2%;
 	padding-left: 2%;
-	padding-right: 2%;
+	padding-right: 2%;	
 	min-width: 25%;
+	min-height:500px;
 	background-color: #002134;
   
 }

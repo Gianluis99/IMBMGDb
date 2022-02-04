@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Genre</title>
+<title>${typeContent} - ${genreName}  </title>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
 <link
@@ -46,6 +46,7 @@
 
 		<h1 id="genreId" title="${genreId}">${genreName}</h1>
 	</div>
+
 
 
 	<div class="filmContainer" id="filmContainer">

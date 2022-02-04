@@ -30,7 +30,7 @@
 
 	<header> </header>
 	<div class="top">
-		<h1>logo</h1>
+		<h1>IMBMGDb</h1>
 		<img alt="" src="">
 
 	</div>
