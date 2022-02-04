@@ -37,6 +37,7 @@
 
 <link rel="stylesheet" href="css/reviewCSS.css">
 <link rel="stylesheet" href="css/myReviewCSS.css">
+<link rel="stylesheet" href="css/footerCSS.css">
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -112,7 +113,8 @@
 
 	<div class="reviewsBox">
 
-		<span> <span id="numReview">${numReview}</span> - Reviews <i class="fas fa-users"></i></span>
+		<span> <span id="numReview">${numReview}</span> - Reviews <i
+			class="fas fa-users"></i></span>
 
 
 		<div id="myReviewAllBox">
@@ -268,9 +270,17 @@
 			</c:if>
 
 		</c:forEach>
-
-
 	</div>
+
+
+	<footer>
+		<div id="footer">
+			<p>IMBMGDb (movie,game,book,music)</p> 
+			<p></p><br>
+			<p>©2022 by IMBMGDb Inc.</p>
+			
+		</div>
+	</footer>
 
 </body>
 

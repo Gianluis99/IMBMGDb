@@ -1,0 +1,21 @@
+#footer {
+	background-color: black !important;
+	margin: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: white !important;
+	text-align: center; height : auto;
+	width: 100%;
+	margin: 0 !important;
+	height: auto;
+	padding: 0;
+}
+
+#footer p {
+	color: white !important;
+	margin: 0;
+	font-size: 12px !important;
+	font-weight: normal;
+	
+}
