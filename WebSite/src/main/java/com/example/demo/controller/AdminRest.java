@@ -14,59 +14,112 @@ import com.imbmgdb.model.Utente;
 import com.imbmgdb.other.Messages;
 
 @RestController
-public class AdminRest {
+public class AdminRest
+{
 
 	@PostMapping("/assignRole")
-	public String doAssignRole(@RequestBody Utente utente, HttpServletResponse resp) {
+	public String doAssignRole(@RequestBody Utente utente, HttpServletResponse resp)
+	{
 
+		//prende dal database, i dati dell'utente
 		Utente now = Database.getInstance().getUtenteDao().getUserByUsername(utente.getUsername());
-		// se l'utente è gia amministratore non possiamo rimuoverlo
-		if (now.getTipo() == TipoUtente.AMMINISTRATORE) {
+		
+		//se l'utente è un amministratore
+		if(now.getTipo() == TipoUtente.AMMINISTRATORE)
+		{
+			
+			//comunica che non è possibile
 			resp.setStatus(500);
+			
+			//restituisce il messaggio d'errore
 			return Messages.ERROR_CANNOT_REMOVE_ADMIN;
+			
 		}
-		if (!now.isAbilitato()) {
+		//se l'utente è bannato
+		if(!now.isAbilitato())
+		{
+			
+			//comunica che non è possibile
 			resp.setStatus(500);
+			
+			//restituisce il messaggio d'errore
 			return Messages.ERROR_CANNOT_ASSIGN_BANNED;
+			
 		}
 		
-
+		//assegna il nuovo tipo, all'utente
 		String result = Database.getInstance().getUtenteDao().assignRoleToUser(utente.getUsername(), utente.getTipo());
 
-		if (!result.equals(Messages.SUCCESS))
+		//se l'update fallisce
+		if(!result.equals(Messages.SUCCESS))
+		{
+			
+			//comunica un errore da parte del server
 			resp.setStatus(500);
+			
+		}
 
+		//restituisce il messaggio contenente il risultato dell'update
 		return result;
+		
 	}
 
 	@PostMapping("/banOrUnbanUser")
-	public String doBanOrUnbanUser(@RequestBody Utente utente, HttpServletResponse res, HttpServletRequest req) {
+	public String doBanOrUnbanUser(@RequestBody Utente utente, HttpServletResponse res, HttpServletRequest req)
+	{
 
+		//prende dal database, i dati dell'utente
 		Utente now = Database.getInstance().getUtenteDao().getUserByUsername(utente.getUsername());
 
-		// non si puo bannare un amministratore
-		if (now.getTipo() == TipoUtente.AMMINISTRATORE) {
+		//se l'utente è un amministratore
+		if(now.getTipo() == TipoUtente.AMMINISTRATORE)
+		{
+			
+			//comunica che non è possibile
 			res.setStatus(500);
+			
+			//restituisce il messaggio d'errore
 			return Messages.ERROR_CANNOT_BAN_ADMIN;
+			
 		}
 
+		//prende la sessione corrente
 		HttpSession session = req.getSession(false);
+		
+		//prende il nome dell'utente, della sessione corrente
 		String thisUsername = (String) session.getAttribute("username");
+		
 		System.out.println(thisUsername);
 
+		//prende i dati dell'utente corrente, che sta cercando di bannare/sbannare
 		Utente you = Database.getInstance().getUtenteDao().getUserByUsername(thisUsername);
 
-		// un moderatore non puo bannare un'altro moderatore
-		if (now.getTipo() == TipoUtente.MODERATATORE && you.getTipo() == TipoUtente.MODERATATORE) {
+		//se si è un moderatore, non si ha il diritto di bannare altri moderatori
+		if(now.getTipo() == TipoUtente.MODERATATORE && you.getTipo() == TipoUtente.MODERATATORE)
+		{
+			
+			//comunica che non è possibile
 			res.setStatus(500);
+			
+			//restituisce il messaggio d'errore
 			return Messages.ERROR_CANNOT_BAN_MODERATOR;
+			
 		}
 
-		String result = Database.getInstance().getUtenteDao().banOrUnbanUser(utente.getUsername(),
-				utente.isAbilitato());
-		if (!result.equals(Messages.SUCCESS))
-			res.setStatus(500);
+		//assegna lo stato di bannato o non bannato, all'utente
+		String result = Database.getInstance().getUtenteDao().banOrUnbanUser(utente.getUsername(), utente.isAbilitato());
+		
+		//se l'update fallisce
+		if(!result.equals(Messages.SUCCESS))
+		{
 
+			//comunica un errore da parte del server
+			res.setStatus(500);
+			
+		}
+
+		//restituisce il messaggio contenente il risultato dell'update
 		return result;
+		
 	}
 }

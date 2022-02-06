@@ -12,40 +12,67 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.Database;
+import com.imbmgdb.model.TipoUtente;
 import com.imbmgdb.model.Utente;
 
 @Controller
-public class AdminController {
+public class AdminController
+{
 
 	@GetMapping("/adminPage")
-	public String pageAdmin(HttpServletRequest req) {
-		List<Utente> users = Database.getInstance().getUtenteDao().getAllUsers();
-		if (req.getSession().getAttribute("username") != null) {
-			req.setAttribute("usersList", users);
-		}
-		HttpSession session = req.getSession(false);
-
-		int userType= (int) session.getAttribute("tipo");
+	public String pageAdmin(HttpServletRequest req)
+	{
 		
-		if(userType==1 ||userType ==2)
-			return "adminPage";
-		else
-			return "pageNotFound";
+		//prende la sessione corrente, dalla richiesta
+		HttpSession session = req.getSession(false);
+		
+		//se la sessione esiste
+		if(session != null)
+		{
+			
+			//se la sessione attiva, contiene un username assegnato
+			if(session.getAttribute("username") != null)
+			{
+				
+				//prende il tipo di utente, dall'utente corrente della sessione
+				int userType = (int) session.getAttribute("tipo");
+				
+				//se il tipo dell'utente, corrisponde a "Admin" o "Moderatore"
+				if(userType == TipoUtente.AMMINISTRATORE || userType == TipoUtente.MODERATATORE)
+				{
+					
+					//crea la lista degli utenti registrati al sito e la riempie tramite DAO
+					List<Utente> users = Database.getInstance().getUtenteDao().getAllUsers();
+					
+					//assegna la lista di utenti ottenuta
+					req.setAttribute("usersList", users);
+					
+					//riporta alla pagina jsp dell'admin (accessibile solo ad untenti di questo tipo o moderatori)
+					return "adminPage";
+					
+				}
+			
+			}
+			
+		}
+		
+		//altrimenti, riporta alla "pagina non trovata"
+		return "pageNotFound";
+		
 	}
 
-	
-	
-	//ricerca nel db per autocomplite 
-	//tramite jquery gli passo un term in modo tale posso ottenere tutti gli user presenti facendo like nel db
-
+	//ricerca nel db per autocomplite, tramite jquery si passa un term per ottenere tutti gli utenti presenti facendo like nel db
 	@RequestMapping(value = "/searchUser")
 	@ResponseBody  
-	public List<String> searchUserInDB(
-			@RequestParam(value = "term", required = false, defaultValue = "") String username) {
+	public List<String> searchUserInDB(@RequestParam(value = "term", required = false, defaultValue = "") String username)
+	{
 
+		//crea la lista dei nomi degli utenti registrati al sito e la riempie tramite DAO
 		List<String> usernames = Database.getInstance().getUtenteDao().searchUser(username);
 
+		//restituisce i nomi degli utenti
 		return usernames;
+		
 	}
 
 }
