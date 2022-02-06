@@ -7,10 +7,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class MyAreaController {
+public class MyAreaController
+{
+	
 	@GetMapping("/myAreaPage")
-	public String myAreaPage(HttpServletRequest req, HttpServletResponse res) {
+	public String myAreaPage(HttpServletRequest req, HttpServletResponse res)
+	{
+		
+		//riporta alla pagina jsp del profilo
 		return "profilePage";
+		
 	}
 
 }
