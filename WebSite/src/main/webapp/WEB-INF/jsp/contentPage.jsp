@@ -122,16 +122,19 @@
 	</div>
 
 	<div class="reviewsBox">
+		<hr class=rounded>
 
-		<span> <span id="numReview">${numReview}</span> - Reviews <i
-			class="fas fa-users"></i></span>
+		<span class="numReviews"> <span id="numReview">${numReview}</span>
+			- Reviews <i class="fas fa-users"></i></span>
 
 
 		<div id="myReviewAllBox">
 
 			<c:if test="${username != null && userReview!=null}">
 				<div id="reviewBox_${userReview.id}" class="reviewBox">
-					<i title="delete this review" id="deleteReviewBtn" class="fas fa-trash" onclick="deleteReview('${userReview.id}',true)" ></i>
+					<i title="delete this review" id="deleteReviewBtn"
+						class="fas fa-trash"
+						onclick="deleteReview('${userReview.id}',true)"></i>
 					<c:if test="${userReview.voto == 1}">
 						<span class="fa fa-star checked"></span>
 						<span class="fa fa-star "></span>
@@ -237,8 +240,9 @@
 			<c:if test="${userReview.nomeUtente != review.nomeUtente}">
 
 				<div id="reviewBox_${review.id}" class="reviewBox">
-				<c:if test="${tipo==1 || tipo==2}">
-					<i title="delete this review" id="deleteReviewBtn" class="fas fa-trash" onclick="deleteReview('${review.id}',false)"></i>
+					<c:if test="${tipo==1 || tipo==2}">
+						<i title="delete this review" id="deleteReviewBtn"
+							class="fas fa-trash" onclick="deleteReview('${review.id}',false)"></i>
 					</c:if>
 
 					<c:if test="${review.voto == 1}">
@@ -287,7 +291,7 @@
 		</c:forEach>
 	</div>
 
-
+	
 	<footer>
 		<div id="footer">
 			<p>IMBMGDb (movie,game,book,music)</p>

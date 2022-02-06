@@ -44,7 +44,7 @@ public class ContenutoDaoJDBC implements ContenutoDao {
 		}
 	}
 
-//TODO PROXY RECENSIONI e CATEGORIE
+//TODO PROXY RECENSIONI 
 	@Override
 	public Contenuto findByPrimaryKey(Long id) {
 		Contenuto contenuto = null;

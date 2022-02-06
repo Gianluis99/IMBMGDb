@@ -22,14 +22,20 @@
 	position: absolute;
 	right: 5px;
 	color: tomato;
+	display: none;
 }
 #deleteReviewBtn:hover {
-	cursor:hand;
+	cursor:hand !important;
 	color: #ff2c06;
 }
 .myReviewAllBox {
 	padding: 20px;
 	margin: 20px;
+}
+
+.reviewBox:hover #deleteReviewBtn{
+	display: block;
+	
 }
 
 .textReview {
