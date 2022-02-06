@@ -1,0 +1,165 @@
+/*
+.text {
+	margin-top: 100px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.listsContainer {
+   background-color: #002134;
+   position: absolute;
+   display: left;
+   width: 800px;
+   height: 900px;
+   list-style-type: none;
+  
+   margin-top: 10px;
+   margin-left: -15px; 
+   position: absolute;
+  
+   overflow:hidden; overflow-y:scroll;
+}
+
+.contentsContainer {
+   position: absolute;
+   display: right;
+   background-color: #002134;
+   width: 800px;
+   height: 900px;
+   list-style-type: none;
+  
+   margin-top: 10px;
+   margin-left: -15px; 
+   position: absolute;
+  
+   overflow:hidden; overflow-y:scroll;
+}
+
+.listBox{
+   margin-top: 10px;
+   width: 800px;
+   height: 100px;
+   background-color: #02908B;
+   margin-left: 0px;
+   padding-left: 10px;
+   padding-top: 10px;
+   color: red;
+}
+
+.buttonsContainer{
+	margin-left: -15px;
+	display: inline;
+}
+*/
+
+ul {
+    list-style-type: none;
+    position: absolute;
+  	top: 15%;
+  	left: 48%;
+  	transform: translate(-50%, -50%);
+  	text-align: center;
+    overflow: hidden;
+    padding: 0;
+    
+}
+
+li {
+    float: left;
+    margin-right: 10px;
+}
+
+.operationButton {
+	float: right;
+	padding: 16px;
+	background: #02908B;
+	color: #002134;
+
+    display: block;
+    text-align: center;
+    width: 130px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.operationButton:hover {
+    background-color: #111;
+}
+
+.split {
+	height: 100%;
+ 	width: 50%;
+  	position: fixed;
+  	overflow-x: hidden;
+  	padding-top: 20px;
+}
+
+
+.left { left: 0; }
+
+.right { right: 0; }
+
+.centered {
+  	position: absolute;
+  	top: 55%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	text-align: center;
+}
+
+.container {
+  	display: left;
+   	width: 800px;
+   	height: 600px;
+   	list-style-type: none;
+  
+   	margin-top: 10px;
+   	margin-left: -15px; 
+   	position: absolute;
+  
+   	overflow:hidden; overflow-y:scroll;
+   	
+   	-ms-overflow-style: none;  
+  	scrollbar-width: none;  
+}
+
+.containerItem{
+	border-radius: 10px;
+   	margin-top: 10px;
+   	width: 800px;
+   	height: 50px;
+   	background-color: #02908B;
+   	margin-left: 0px;
+   	padding-left: 10px;
+   	padding-top: 10px;
+   	color: #002134;
+   	font-size: 30px;
+   	text-align: center;
+}
+
+.containerItem:hover {
+	color: red;
+}
+

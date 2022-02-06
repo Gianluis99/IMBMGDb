@@ -22,7 +22,7 @@
 		<%@ include file="navBar.jsp" %>         
         
         <br></br>
-        <h1 class = "resultsFor"> Results for ${text}</h1>
+        <h1 class = "resultsFor"> Results for ${title}</h1>
       
         <table id = "resultsTable" class="table table-hover">
 	    	<thead>

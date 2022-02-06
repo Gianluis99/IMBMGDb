@@ -11,41 +11,27 @@
 	
 	    <meta charset="utf-8">
 	    
-	    <link rel="stylesheet" href="css/splittedPageCSS.css">
-	    <link rel="stylesheet" href="css/listBoxCSS.css">
-	    
-	    
+	    <link rel="stylesheet" href="css/listPageCSS.css">
+	    <script type="text/javascript" src="../js/listHandler.js"></script>
 	</head>
 	
 	<body>
 		
 		<%@ include file="navBar.jsp" %>
-		 
-		<div class="split">
-			
-			<br></br>
-			<h2 class = "text">Le mie liste</h2>
-			
-			<!--  		    
-			<ul class = "buttonsContainer">
-				<li><button>Add</button></li>
-				<li><button>Edit</button></li>
-				<li><button>Remove</button></li>
+		<div class = "split left">
+			<a href = "/addList"> ${username} </a>
+			<ul>
+				<li><button class = "operationButton" onclick = "addList('${username}')">Add</button></li>
+				<li><button class = "operationButton" onclick = "deleteList()">Delete</button></li>
 			</ul>
-			-->
-					  
-			<ul class="listsContainer">
-				 <li class = "listBox"> Lista 6 </li>
-				 <li class = "listBox"> Lista 6 </li>
-				 
-			</ul>
+		 	
+			<div class="container centered" id = "listContainer"> </div>
 		</div>
-			
-			
-		<div class="split">
-			    
+		
+		<div class = "split right">
+			<div class="container centered"></div>
 		</div>
 		
 	</body>
-		
+	
 </html>

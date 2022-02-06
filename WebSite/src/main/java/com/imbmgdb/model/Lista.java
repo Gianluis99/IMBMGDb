@@ -1,16 +1,14 @@
 package com.imbmgdb.model;
 
-import java.sql.Date;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class Lista {
 	
 	private String nome;
-	private Date data;
 	private String nomeUtente;
-	
-	private ArrayList<Contenuto> contenuti;
+	private ArrayList<String> contenuti;
 
 	public Lista(String nome) {
 		super();
@@ -25,21 +23,14 @@ public class Lista {
 		this.nome = nome;
 	}
 
-	public ArrayList<Contenuto> getContenuti() {
+	public ArrayList<String> getContenuti() {
 		return contenuti;
 	}
 
-	public void setContenuti(ArrayList<Contenuto> contenuti) {
+	public void setContenuti(ArrayList<String> contenuti) {
 		this.contenuti = contenuti;
 	}
 	
-	public Date getData() {
-		return data;
-	}
-
-	public void setData(Date data) {
-		this.data = data;
-	}
 	public String getNomeUtente() {
 		return nomeUtente;
 	}
