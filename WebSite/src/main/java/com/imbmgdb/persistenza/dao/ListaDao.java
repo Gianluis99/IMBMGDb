@@ -14,7 +14,7 @@ public interface ListaDao {
 	public boolean insertNewLista(Lista l);
 	
 	//aggiorna la lista
-	public boolean updateLista(String id);
+	public boolean updateLista(Long id);
 
 	public void delete(Lista l);
 }

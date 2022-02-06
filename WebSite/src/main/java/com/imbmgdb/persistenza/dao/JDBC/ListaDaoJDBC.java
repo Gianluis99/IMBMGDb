@@ -51,7 +51,7 @@ public class ListaDaoJDBC implements ListaDao {
 
 
 	@Override
-	public boolean updateLista(String id) {
+	public boolean updateLista(Long id) {
 		return false;
 	}
 
