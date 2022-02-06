@@ -20,15 +20,17 @@ button:hover {
   	background-color: #B4FBF8;
 }
 
-input[type=text], input[type=password] {
-  	background-color: #002134;
-	border: 2px solid #02908B;
-	border-radius: 5px;
-	outline: none;
+a {
+	float: left;
+	display: block;
+	text-align: center;
+	padding: 24px 26px;
+	text-decoration: none;
+	border-bottom: 3px solid transparent;
+	width: 160px;
 }
-
-input[type=text]:hover, input[type=password]:hover {
-  	color: #B4FBF8;	
-  	border-color: #B4FBF8;	 
+			
+a:hover {
+    color: #B4FBF8;
 }
 

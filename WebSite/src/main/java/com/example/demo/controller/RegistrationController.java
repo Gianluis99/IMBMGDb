@@ -43,10 +43,6 @@ public class RegistrationController {
 		session.setAttribute("password", rePassword);
 		session.setAttribute("tipo", TipoUtente.BASE);
 
-
-
-
-		
 		if(!password.equals(rePassword)) { //controlliamo che le password siano uguali
 			session.setAttribute("error", Messages.REGISTRATION_PASSWORDs_NOTVALID);
 			return risposta;

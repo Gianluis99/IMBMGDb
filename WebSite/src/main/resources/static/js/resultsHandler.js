@@ -83,9 +83,8 @@ function addContentInTable(movie){
 	row.setAttribute("id", movie.id);
 	row.setAttribute("type", "submit");
 	
-	
+
 	var v = "<a href=" + "'movie_?id=" + movie.id+ "'"+ movie.title + "'" + " class='view''> " + movie.title + "" + "</a>";
-	
 	
 	row.setAttribute("onclick", "showContent(" + movie.id + ")");
 	row.innerHTML = "<td>" + movie.id + "</td>" +

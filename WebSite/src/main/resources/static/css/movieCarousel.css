@@ -1,0 +1,55 @@
+.swiper {
+	margin-top: 20px;	
+    width: 100%;
+    height: 450px;
+}
+
+.swiper .swiper-container {
+    padding: 0 4%;
+}
+
+.titleSection {
+	height: 60px;
+	font-size: 40px;
+	margin-left: 25px;
+	margin-top: 200px;
+	padding-left: 15px;
+	border-left: 6px solid;
+}
+
+.link {
+	width: 300px;
+	text-align: center;
+}
+
+.poster {
+	height: 400px;
+	width: 250px;
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+    height: 100%;
+    width: 4%;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    background-color: rgba(20, 20, 20, 0.5);
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.slider .swiper-slide:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  z-index: 1;
+}
+
+.slider .swiper-slide:first-child:hover {
+  margin: 0 40px;
+}
+
+
+
+
+

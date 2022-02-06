@@ -32,14 +32,13 @@ public class ListaDaoJDBC implements ListaDao {
 
 	@Override
 	public boolean insertNewLista(Lista lista) {
-		String query = "insert into lista values (?,?,?)";
+		String query = "insert into lista values (?,?)";
+		
 		try {
 			PreparedStatement st = conn.prepareStatement(query);
 			
 			st.setString(1, lista.getNome());
 			st.setString(2, lista.getNomeUtente());
-			st.setDate(3, lista.getData());
-
 			
 			int res=0;
 			res=st.executeUpdate();
@@ -52,7 +51,7 @@ public class ListaDaoJDBC implements ListaDao {
 
 
 	@Override
-	public boolean updateLista(Lista c) {
+	public boolean updateLista(String id) {
 		return false;
 	}
 

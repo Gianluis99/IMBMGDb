@@ -15,23 +15,23 @@
 	</head>
 
 	<body>
-		<!-- Nella topnav vengono interrogati gli attributi degli scoped obj (tipo le req). jstl cerca un attributo che si chiama username. -->
+		
 		<div class="topnav">
 			<c:if test="${username != null}">
-				<div class="dropdown">
+				<div class="dropdownUser">
 					${username}
-					<div class="dropdown-content">
-						<a class="item left" href="myAreaPage"> MyArea </a> 
+					<div class="dropdownItems">
+						<a class="item itemLeft" href="myAreaPage"> MyArea </a> 
 						
 						<c:if test="${tipo == 1}">
-							<a class="item right" href="adminPage">Admin</a>
+							<a class="item itemRight" href="adminPage">Admin</a>
 						</c:if>
 	
 						<c:if test="${tipo == 2}">
-							<a class="item right" href="adminPage">Moderator</a>
+							<a class="item itemRight" href="adminPage">Moderator</a>
 						</c:if>
 						
-						<a class="item right" href="doLogout"> Logout </a>
+						<a class="item itemRight" href="doLogout"> Logout </a>
 					</div>
 				</div>
 			</c:if>
@@ -40,31 +40,21 @@
 				<a href="loginPage"> Login </a>
 			</c:if>
 	
-			<a href="/">Home</a> <a href = "/MoviePage">Movie</a> <a>Game</a> <a>Book</a> <a>Music</a>
+			<a href="/"> Home </a> 
+			<a href = "/MoviePage">Movie</a> 
+			<a>Game</a> 
+			<a>Book</a> 
+			<a>Music</a>
 			 
-			<div class="search-container">
+			<div class="searchContainer">
 				<form method = "POST" action = "/resultsPage">
-					<input type="text" placeholder="Search.." name = "searchField">
+					<input type="text" placeholder="Search.." name = "searchField" class = "searchField">
 					<%@ include file="dropdownFilter.jsp" %>
-					<button type="submit"> Search </button>
+					<button type="submit" class = "searchButton"> Search </button>
 				</form>
 			</div>
-		
-		<!--  
-		<c:if test="${username == null}">
-			<a href="loginPage">Login</a>
-		</c:if>
-
-		<a href="/">Home</a> <a href="/MoviePage">Movie</a> <a>Game</a> <a>Book</a> <a>Music</a>
-		<div class="search-container">
-			<form action="/action_page.php">
-				<input type="text" placeholder="Search.." name="search">
-				<button type="submit">Submit</button>
-			</form>
-
 		</div>
-		-->
-		
+	 
 	</body>
 
 </html>

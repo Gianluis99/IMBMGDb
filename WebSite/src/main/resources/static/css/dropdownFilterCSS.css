@@ -1,15 +1,16 @@
 .date {
+	position: relative;
 	font-size: 20px;
-	margin-left: -25px;
-	width: 160px;
-	padding: 0px;
+	text-align: center;
+	width: 140px;
+	margin-left: -15px;
 }
 
 label {
 	color: #002134;
 }
 
-.dropdownFilter {
+.dropdownFilters {
 	width: 160px;
 	padding: 24px 26px;
 	float: right;
@@ -22,35 +23,42 @@ label {
 	margin-left: 10px;
 }
 
-.dropdown-option {
+.dropdownOptions {
 	position: absolute;
 	display: none;
 	background-color: #02908B;
-	min-width: 160px;
+	min-width: 200px;
+	height: 150px;
 	margin-top: 26px;
-	margin-left: -506px;
+	margin-left: -666px;
 	text-align: center;
 	color: #002134;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 10px 0px 10px 10px;
 	z-index: 1;
-}
-
-
-.dropdownFilter:hover {
-	color: #B4FBF8;
-	border-radius: 5px 5px 0px 0px;
 }
 
 .option{
 	padding: 24px, 26px;
-	width: 160px;
+	width: 200px;
 	text-decoration: none;
 	display: block;
 	color: #002134;
 	text-align: center;
-	border-radius: 5px 5px 0px 0px;
 }
 
-.dropdownFilter:hover .dropdown-option { display: block; }
+.dropdownFilters:hover {
+	color: #B4FBF8;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.dropdownFilters:hover .dropdownOptions { display: block; }
+
+/*
+.myIcon {
+	color: red;
+	font-size: 30px;
+	margin-top: 10px;
+}
+*/
 
 
