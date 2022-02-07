@@ -29,6 +29,8 @@
 
 <script src="https://kit.fontawesome.com/a076d05399.js"
 	crossorigin="anonymous"></script>
+	
+	<script type="text/javascript" src="../js/listHandler.js"></script>
 
 <c:if test="${username != null}">
 	<script type="text/javascript" src="../js/reviewHandler.js"></script>
@@ -83,10 +85,12 @@
 			<i class="fas fa-star"></i>
 			<p class="infoText">${contentMovie.voto}Imdb</p>
 
-
-
 		</div>
 
+		<br></br>
+		<button onclick = "addContent('${username}','${id}')">Add in</button>
+		<br></br>
+		<button onclick = "deleteContent('${username}','${id}')">Delete from</button>
 
 		<div class="multimediaContainer">
 			<img class="imgMultimedia" id="imgMultimedia"
