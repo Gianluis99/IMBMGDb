@@ -1,0 +1,33 @@
+
+.filmContainer {
+	display: flex;
+	flex-wrap: wrap;
+	padding-right: 2%;
+	 
+}
+
+
+#movieItem{
+	overflow: none;
+	width: 200px;
+	margin-bottom: 2%;	
+	margin-right: 50px;
+	
+}
+
+
+#movieItem:hover {
+	transform: scale(1.1);
+	transition: all 0.8s ease-in-out;
+}
+
+.img {
+	width: 240px;
+	height: 100%;
+	cursor: hand;
+	box-shadow: 2px 2px 3px 3px #001624;
+	
+}
+
+
+
