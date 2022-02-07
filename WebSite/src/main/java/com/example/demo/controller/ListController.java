@@ -28,5 +28,33 @@ public class ListController {
 			
 		}
 	}
-
+	
+	@PostMapping("/addInList_{username}_{listname}_{id}")
+	public void addInList(@PathVariable String username, @PathVariable String listname, @PathVariable String id, HttpServletRequest req, HttpServletResponse res) {
+		Lista list = new Lista(listname);
+		list.setNomeUtente(username);
+		
+		if(Database.getInstance().getListaDao().updateLista(list, id)) {
+			
+		}
+	}
+	
+	@PostMapping("/deleteList_{username}_{listname}")
+	public void deleteList(@PathVariable String username, @PathVariable String listname, HttpServletRequest req, HttpServletResponse res) {
+		Lista list = new Lista(listname);
+		list.setNomeUtente(username);
+		
+		Database.getInstance().getListaDao().delete(list);
+	}
+	
+	@PostMapping("/deleteFromList_{username}_{listname}_{id}")
+	public void deleteFromList(@PathVariable String username, @PathVariable String listname, @PathVariable String id, HttpServletRequest req, HttpServletResponse res) {
+		Lista list = new Lista(listname);
+		list.setNomeUtente(username);
+		
+		Database.getInstance().getListaDao().deleteContent(list, id);
+			
+		
+	}
+	
 }

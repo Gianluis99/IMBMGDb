@@ -27,6 +27,8 @@ public class ContentController {
 		List<Recensione>reviews=Database.getInstance().getRecensioneDao().findAll(idL);
 		contenuto.setRecensioni(reviews);
 		req.setAttribute("contentMovie", contenuto);
+		
+		req.setAttribute("id", id);
 
 		HttpSession session = req.getSession(false);
 
