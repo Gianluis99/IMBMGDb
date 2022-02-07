@@ -9,6 +9,9 @@ public interface UtenteDao {
 	public String insertNewUtente(Utente utente);
 	public String checkUser(Utente user);
 
+	public boolean updateUserUsername(Utente user);
+	public boolean updateUserEmail(Utente user);
+	
 	public boolean delete(Utente u);
 	
 	public ArrayList<String> searchUser(String value);
