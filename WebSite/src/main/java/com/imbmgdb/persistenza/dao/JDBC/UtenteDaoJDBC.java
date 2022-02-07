@@ -82,28 +82,49 @@ public class UtenteDaoJDBC implements UtenteDao {
 		try
 		{
 			
-			String query = "update utente set nome_utente = ? where email = ?";
+			//salvo il vecchio nome utente
+			String queryVecchioNome = "select * from utente where email = ?";
+			PreparedStatement stmtVecchioNome = conn.prepareStatement(queryVecchioNome);
+			stmtVecchioNome.setString(1, user.getEmail());
+			
+			//esegue la query
+			ResultSet rsVecchioNome = stmtVecchioNome.executeQuery();
+			rsVecchioNome.next();
+			
+			//salva il risultato
+			String vecchioNomeUtente = rsVecchioNome.getString("nome_utente");
+			
+			//chiude
+			rsVecchioNome.close();
+			
+			String query = "begin; " +
+						   "with dummy as (" +
+					   	   "update recensione set nome_utente = ? where nome_utente = ? )" +
+						   "update utente set nome_utente = ? where email = ?; " +
+						   "commit;";
 			PreparedStatement stmt = conn.prepareStatement(query);
 			stmt.setString(1, user.getUsername());
-			stmt.setString(2, user.getEmail());
-			
+			stmt.setString(2, vecchioNomeUtente);
+			stmt.setString(3, user.getUsername());
+			stmt.setString(4, user.getEmail());
+
 			stmt.executeUpdate();
 			stmt.close();
 			
-			//prende tutte le recensioni dell'utente
-			List<Recensione> recensioni = Database.getInstance().getRecensioneDao().findAllOfAUser(user.getUsername());
-			
-			//aggiorna il nome utente, legato alle recensioni
-			for(Recensione rec : recensioni)
-			{
-				rec.setNomeUtente(user.getUsername());
-			}
-			
-			//aggiorna, le recensioni, nel database
-			for(Recensione rec : recensioni)
-			{
-				Database.getInstance().getRecensioneDao().updateUsername(rec);
-			}
+//			//prende tutte le recensioni dell'utente
+//			List<Recensione> recensioni = Database.getInstance().getRecensioneDao().findAllOfAUser(user.getUsername());
+//			
+//			//aggiorna il nome utente, legato alle recensioni
+//			for(Recensione rec : recensioni)
+//			{
+//				rec.setNomeUtente(user.getUsername());
+//			}
+//			
+//			//aggiorna, le recensioni, nel database
+//			for(Recensione rec : recensioni)
+//			{
+//				Database.getInstance().getRecensioneDao().updateUsername(rec);
+//			}
 			
 			return true;
 			
