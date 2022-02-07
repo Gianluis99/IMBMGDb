@@ -182,9 +182,8 @@
 
 			<c:if test="${username == null}">
 				<div class="blockDiv">
-					<span> You must be logged to post a review! <a
-						href="loginPage"> <i class="fas fa-sign-in-alt"></i>
-					</a>
+					<span> You must be logged to post a review! <i class="fas fa-sign-in-alt"></i>
+					
 					</span>
 				</div>
 			</c:if>
