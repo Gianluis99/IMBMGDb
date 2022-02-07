@@ -6,6 +6,9 @@ import com.imbmgdb.model.Recensione;
 
 
 public interface RecensioneDao {
+	
+	public List<Recensione> findAllOfAUser(String username);
+	public boolean updateUsername(Recensione recensione);
 
 	//dato un contenuto restituisce tutte le recensioni
 	public List<Recensione> findAll(Long idContenuto);

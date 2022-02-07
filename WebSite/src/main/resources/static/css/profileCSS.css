@@ -1,59 +1,116 @@
-body {
-	margin-left: 0px;
-	margin-top: 5px;
-	background-color: #002134;
+body
+{
+	background-color: #002134 !important;
 }
 
-ul { display: inline; }
-
-li { display: inline; }
-
-nav {
-	margin-top: 5px; 
-  	overflow: hidden;
-	background-color: #002134;
+*
+{
+	font-family: "Century Gothic", sans-serif;
+	font-weight: bold;
+	color: #02908B;
 }
 
-nav a {
-	width: 100px;
-	padding: 24px 26px;
-  	float: left;
-	display: block;
-  	text-align: center;
-  	font-size: 26px;
-  	background-color: transparent;
-  	border-bottom: 3px solid transparent;
+list-btn
+{
+	
 }
 
-nav a:hover {
-  	color: #B4FBF8;
-  	border-bottom: 3px solid #B4FBF8;
+.infoContainer
+{
+	margin: 2%;
+	margin-top: 1%;
+	padding: 2%;
+	padding-top: 0;
 }
 
-nav .rightContainer {
-	float: right;
-	margin-right: 26px;
-	margin-top: 15px;
+table
+{
+	margin-top: 5%;
+	width: 100%;
+	padding: 1%;
+	border-collapse: separate;
+	border-spacing: 10px;
 }
 
-nav input[type=text] {
-	width: 400px;
-  	height: 38px;
-  	padding: 5px 10px;
-  	margin-right: 50px;
-  	margin-left: 10px;
+table th
+{
+	color: black !important;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
 }
 
-.button {
-	padding: 0px 0px 0px 0px;
- 	border: none;
- 	height: 50px;
- 	width: 150px;
- 	background-color: #02908B;
- 	color: #002134;
- 	border-radius: 5px;
+table td
+{
+	text-align: center;
+	vertical-align: middle;
 }
 
-.button:hover {
-  	background-color: #B4FBF8;
+table tr
+{
+	margin: 2%;
+}
+
+.tableBox
+{
+	margin-right: 2%;
+	overflow-x: auto;
+}
+
+p
+{
+	color: #969696;
+	font-size: 100%;
+}
+
+h1
+{
+	font-weight: bold;
+}
+
+.info-container
+{
+	display: flex;
+}
+
+
+
+
+.form-control-sm
+{
+	outline: none;
+	margin-right: 5%;
+	margin-left: 5%;
+	width: 40%;
+}
+
+.personalInfoContainer
+{
+	margin-top: 10%;
+	box-shadow: 1px 1px 1px 1px #c0c0c0;
+	margin: 2%;
+	padding-top: 2%;
+	padding-left: 2%;
+	padding-bottom: 2%;
+	padding-bottom: 5%;
+	margin-bottom: 5%;
+	border-radius: 5px;
+		background-color: #00253c!important;
+	
+}
+
+.list-btn
+{
+	
+	color: #002134;
+	background-color: #02908B !important;
+	text-align: center;
+	border-radius: 10px;
+	
+}
+
+.list-btn:hover
+{
+	color: #B4FBF8;
+	background-color: #014947 !important;
 }

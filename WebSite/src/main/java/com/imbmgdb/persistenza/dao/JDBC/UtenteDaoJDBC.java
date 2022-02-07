@@ -5,9 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.security.crypto.bcrypt.BCrypt;
 
+import com.example.demo.Database;
+import com.imbmgdb.model.Recensione;
 import com.imbmgdb.model.Utente;
 import com.imbmgdb.other.Messages;
 import com.imbmgdb.persistenza.dao.UtenteDao;
@@ -70,6 +73,75 @@ public class UtenteDaoJDBC implements UtenteDao {
 
 		return Messages.ERROR;
 
+	}
+	
+	@Override
+	public boolean updateUserUsername(Utente user)
+	{
+		
+		try
+		{
+			
+			String query = "update utente set nome_utente = ? where email = ?";
+			PreparedStatement stmt = conn.prepareStatement(query);
+			stmt.setString(1, user.getUsername());
+			stmt.setString(2, user.getEmail());
+			
+			stmt.executeUpdate();
+			stmt.close();
+			
+			//prende tutte le recensioni dell'utente
+			List<Recensione> recensioni = Database.getInstance().getRecensioneDao().findAllOfAUser(user.getUsername());
+			
+			//aggiorna il nome utente, legato alle recensioni
+			for(Recensione rec : recensioni)
+			{
+				rec.setNomeUtente(user.getUsername());
+			}
+			
+			//aggiorna, le recensioni, nel database
+			for(Recensione rec : recensioni)
+			{
+				Database.getInstance().getRecensioneDao().updateUsername(rec);
+			}
+			
+			return true;
+			
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		
+		return false;
+		
+	}
+	
+	@Override
+	public boolean updateUserEmail(Utente user)
+	{
+		
+		try
+		{
+			
+			String query = "update utente set email = ? where nome_utente = ?";
+			PreparedStatement stmt = conn.prepareStatement(query);
+			stmt.setString(1, user.getEmail());
+			stmt.setString(2, user.getUsername());
+			
+			stmt.executeUpdate();
+			stmt.close();
+			
+			return true;
+			
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		
+		return false;
+		
 	}
 
 	@Override

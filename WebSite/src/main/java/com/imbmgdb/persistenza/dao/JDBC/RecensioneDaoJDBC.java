@@ -19,6 +19,74 @@ public class RecensioneDaoJDBC implements RecensioneDao {
 	}
 
 	@Override
+	public List<Recensione> findAllOfAUser(String username)
+	{
+		
+		List<Recensione> recensioni = new ArrayList<Recensione>();
+		
+		try
+		{
+			
+			String query = "select * from recensione where nome_utente = ?";
+			PreparedStatement stmt = conn.prepareStatement(query);
+			stmt.setString(1, username);
+			
+			ResultSet rs = stmt.executeQuery();
+			
+			//crea le recensioni e le aggiunge
+			while(rs.next())
+			{
+				
+				Recensione rec = new Recensione();
+				rec.setId(rs.getLong("id"));
+				rec.setNomeUtente(rs.getString("nome_utente"));
+				rec.setTesto(rs.getString("testo"));
+				rec.setVoto(rs.getInt("voto"));
+				rec.setIdContenuto(rs.getLong("id_contenuto"));
+				
+				recensioni.add(rec);
+				
+			}
+			
+			stmt.close();
+			
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		
+		return recensioni;
+		
+	}
+	
+	@Override
+	public boolean updateUsername(Recensione recensione)
+	{
+		
+		try
+		{
+			String query = "update recensione set nome_utente = ? where id = ?";
+			PreparedStatement stmt = conn.prepareStatement(query);
+			stmt.setString(1, recensione.getNomeUtente());
+			stmt.setLong(2, recensione.getId());
+			
+			stmt.executeUpdate();
+			stmt.close();
+			
+			return true;
+			
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		
+		return false;
+		
+	}
+	
+	@Override
 	public long saveOrUpdate(Recensione recensione) {
 		if (recensione.getId() == 0) {// se la recensione non esiste viene fatto l'insert
 			// INSERT

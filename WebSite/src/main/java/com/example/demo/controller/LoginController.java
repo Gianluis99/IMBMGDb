@@ -35,7 +35,10 @@ public class LoginController {
 		String result = Database.getInstance().getUtenteDao().checkUser(user);
 		
 		if(result.equals(Messages.SUCCESS)) {
+			String email = Database.getInstance().getUtenteDao().getUserByUsername(username).getEmail();
+			
 			session.setAttribute("username", username);
+			session.setAttribute("email", email);
 			
 			Utente uLog=Database.getInstance().getUtenteDao().getUserByUsername(username);
 			session.setAttribute("tipo", uLog.getTipo());
