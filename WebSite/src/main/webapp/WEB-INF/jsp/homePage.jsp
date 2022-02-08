@@ -37,7 +37,7 @@
 
 	<div class="titleSection">From your List</div>
 	<c:if test="${username == null}">
-	<div class="listSection"><p>Sign in to access your list.</p></div>
+	<div class="listSection"><p>Sign in to access your list. <i class="fas fa-sign-in-alt"></i></p></div>
 		
 	</c:if>
 	<c:if test="${username != null}">
