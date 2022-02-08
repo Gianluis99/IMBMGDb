@@ -26,14 +26,16 @@
 		<br></br>
 		<br></br>
 		
+		<!-- 
 		<div class="infoContainer">
 			<h1 id="my-profile">
 				My profile
 			</h1>
 		</div>
+		-->
 		
 		<div>
-			<a id="list-btn" class="list-btn" href="listPage">Lists Section</a>
+			<a id="list-btn" class="list-btn listButton" href="listPage">Lists Section</a>
 		</div>
 		
 		<br></br>

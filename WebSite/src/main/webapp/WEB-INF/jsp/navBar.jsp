@@ -24,11 +24,11 @@
 						<a class="item itemLeft" href="myAreaPage"> MyArea </a> 
 						
 						<c:if test="${tipo == 1}">
-							<a class="item itemRight" href="adminPage">Admin</a>
+							<a class="item itemCenter" href="adminPage">Admin</a>
 						</c:if>
 	
 						<c:if test="${tipo == 2}">
-							<a class="item itemRight" href="adminPage">Moderator</a>
+							<a class="item itemCenter" href="adminPage">Moderator</a>
 						</c:if>
 						
 						<a class="item itemRight" href="doLogout"> Logout </a>

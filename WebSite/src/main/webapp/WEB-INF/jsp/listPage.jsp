@@ -19,11 +19,12 @@
 		
 		<%@ include file="navBar.jsp" %>
 		<div class = "split left">
+			
 			<ul>
 				<li><button class = "operationButton" onclick = "addList('${username}')">Add</button></li>
 				<li><button class = "operationButton" onclick = "deleteList('${username}')">Delete</button></li>
 			</ul>
-		 	
+		
 			<div class="container centered" id = "listContainer"> </div>
 		</div>
 		

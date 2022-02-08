@@ -163,3 +163,13 @@ li {
 	color: red;
 }
 
+@media screen and (max-width: 1700px) {
+	 .container{
+	 	display: none;
+	 }
+	 
+	 .operationButton {
+	 	display: none;
+	 }
+}
+
