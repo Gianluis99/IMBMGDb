@@ -84,6 +84,19 @@ h1 {
 	text-shadow: 2px 2px 4px #000000;
 }
 
+#listContainer{
+	margin-top:2%;
+	margin-bottom:2%;
+	display: flex;
+}
+
+.btnList{
+	margin-right: 2%;
+	width: auto;
+	box-shadow: 3px 5px 6px 6px #001624;
+	
+}
+
 .multimediaContainer {
 	display: flex;
 	margin-top: 4%;

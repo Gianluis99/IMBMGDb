@@ -78,20 +78,22 @@
 		<div class="infoBox">
 
 			<i class="fas fa-clock"></i>
-			<p class="infoText">${contentMovie.durata}min</p>
+			<p class="infoText">${contentMovie.durata} min</p>
 
 
 
 			<i class="fas fa-star"></i>
-			<p class="infoText">${contentMovie.voto}Imdb</p>
+			<p class="infoText">${contentMovie.voto} Imdb</p>
 
 		</div>
 
-		<br></br>
-		<button onclick = "addContent('${username}','${id}')">Add in</button>
-		<br></br>
-		<button onclick = "deleteContent('${username}','${id}')">Delete from</button>
-
+		<div id="listContainer">
+			<br></br>
+			<button class="btnList" onclick = "addContent('${username}','${id}')">Add in <i class="fas fa-plus" style="color:#002337;"></i></button>
+			<br></br>
+			<button class="btnList" onclick = "deleteContent('${username}','${id}')">Delete from <i class="fas fa-trash" style="color:#002337;"></i></button>
+		</div>
+		
 		<div class="multimediaContainer">
 			<img class="imgMultimedia" id="imgMultimedia"
 				src="${contentMovie.urlImg}">
