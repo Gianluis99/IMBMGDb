@@ -1,13 +1,12 @@
 # IMBMGDb
 
 	
-#Contesto di applicazione,
+# Contesto di applicazione,
 Tale sistema ha come obiettivo principale quello  di archiviare e catalogare 
 le seguenti categorie di contenuti:Giochi,Film,Libri,Musica, 
 rendendo fruibili in modo dettagliato tutte le informazioni che riguardano uno specifico contenuto.
 
 Il sistema permette all’utente di:
-
 * ricercare e visualizzare un tipo di contenuto tra film, videogioco, musica, libro.
 * poter visualizzare i pareri che hanno altri utenti in merito al contenuto ricercato, tramite la sezione delle recensioni.
 * poter esprimere un proprio parere in relazione ad un contenuto tramite una recensione(per gli utenti registrati).
