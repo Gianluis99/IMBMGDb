@@ -1,7 +1,5 @@
 # IMBMGDb
 
-	
-# Contesto di applicazione,
 Tale sistema ha come obiettivo principale quello  di archiviare e catalogare 
 le seguenti categorie di contenuti:Giochi,Film,Libri,Musica, 
 rendendo fruibili in modo dettagliato tutte le informazioni che riguardano uno specifico contenuto.
